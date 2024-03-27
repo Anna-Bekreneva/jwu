@@ -3,6 +3,9 @@ import { StoryObj } from '@storybook/react'
 import { withRouter } from 'storybook-addon-remix-react-router'
 
 const meta = {
+  argTypes: {
+    to: { default: '/', type: 'string' },
+  },
   component: Logo,
   decorators: [withRouter],
   tags: ['autodocs'],
