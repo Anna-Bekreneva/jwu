@@ -1,0 +1,94 @@
+@import '../../../styles/mixins';
+
+.large,
+.title1,
+.title2,
+.subtitle,
+.caption1,
+.strong1,
+.strong2 {
+  font-family: Poppins, sans-serif;
+  color: var(--color-purple-900);
+}
+
+.large,
+.title1,
+.title2 {
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.large {
+  @include adaptive-value-base('font-size', 80, 32, 1);
+
+  letter-spacing: 0.001em;
+}
+
+.title1 {
+  @include adaptive-value-base('font-size', 48, 30, 1);
+}
+
+.title2 {
+  font-size: 28px;
+
+  /* stylelint-disable-next-line */
+  @include mq(md) {
+    font-size: 24px;
+  }
+}
+
+.subtitle {
+  font-size: 24px;
+
+  /* stylelint-disable-next-line */
+  @include mq(sm) {
+    font-size: 20px;
+  }
+}
+
+.strong1,
+.strong2 {
+  line-height: 1.3;
+}
+
+.strong1 {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.strong2,
+.body2 {
+  font-size: 16px;
+}
+
+.body1,
+.body2,
+.caption2 {
+  line-height: 1.5;
+}
+
+.body1 {
+  font-size: 20px;
+}
+
+.caption1,
+.caption2 {
+  font-size: 14px;
+}
+
+.caption1 {
+  line-height: 1.3;
+}
+
+.line {
+  position: relative;
+  display: inline-block;
+
+  svg {
+    stroke: var(--color-orange-400);
+    position: absolute;
+    bottom: -30px;
+    right: 0;
+    z-index: -1;
+  }
+}
