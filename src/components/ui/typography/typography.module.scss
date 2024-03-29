@@ -85,10 +85,11 @@
   display: inline-block;
 
   svg {
-    stroke: var(--color-orange-400);
     position: absolute;
-    bottom: -30px;
-    right: 0;
     z-index: -1;
+    right: 0;
+    bottom: -12px;
+
+    stroke: var(--color-orange-400);
   }
 }
