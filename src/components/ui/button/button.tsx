@@ -6,6 +6,7 @@ import s from './button.module.scss'
 
 type Props<T extends ElementType> = {
   as?: T
+  isIcon?: boolean
   variant?: keyof typeof ButtonVariant
 }
 
@@ -13,9 +14,9 @@ const ButtonPolymorph = <T extends ElementType = 'button'>(
   props: Props<T> & Omit<ComponentPropsWithoutRef<T>, keyof Props<T>>,
   ref: ElementRef<T>
 ) => {
-  const { as: Tag = 'button', className, variant = ButtonVariant.primary, ...rest } = props
+  const { as: Tag = 'button', className, isIcon, variant = ButtonVariant.primary, ...rest } = props
 
-  const buttonClassName = `${s.button} ${s[String(variant)]}`
+  const buttonClassName = `${s.button} ${isIcon && s.isIcon} ${s[String(variant)]}`
 
   return (
     // @ts-expect-error TS2322

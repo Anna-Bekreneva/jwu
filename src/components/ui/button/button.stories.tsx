@@ -1,5 +1,5 @@
 import { ButtonVariant } from '@/common'
-import { Button } from '@/components'
+import { Button, EmailIcon, FacebookIcon } from '@/components'
 import { Meta, StoryObj } from '@storybook/react'
 
 const meta = {
@@ -21,6 +21,28 @@ export const Primary: Story = {
   args: {
     children: 'Primary button',
     variant: ButtonVariant.primary,
+  },
+}
+
+export const PrimaryWithIcon: Story = {
+  args: {
+    as: 'a',
+    children: <FacebookIcon fill={'white'} />,
+    href: '#',
+    isIcon: true,
+    target: '_blank',
+    variant: ButtonVariant.primary,
+  },
+}
+
+export const SecondaryWithIcon: Story = {
+  args: {
+    as: 'a',
+    children: <EmailIcon fill={'none'} stroke={'#ED008C'} />,
+    href: 'mailto:test@gmail.com',
+    isIcon: true,
+    target: '_blank',
+    variant: ButtonVariant.secondary,
   },
 }
 
