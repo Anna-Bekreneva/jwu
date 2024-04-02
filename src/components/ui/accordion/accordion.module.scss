@@ -1,0 +1,77 @@
+@import '../../../styles/mixins';
+
+.item {
+  @include adaptive-value-base('padding-top', 24, 12, 1);
+  @include adaptive-value-base('padding-bottom', 24, 12, 1);
+  @include adaptive-value-base('padding-right', 24, 12, 1);
+  @include adaptive-value-base('padding-left', 24, 12, 1);
+  @include adaptive-value-base('border-radius', 20, 12, 1);
+
+  background-color: var(--color-white);
+}
+
+.trigger {
+  @include adaptive-value-base('font-size', 24, 16, 1);
+
+  position: relative;
+
+  display: inline-block;
+
+  width: 100%;
+  padding-right: 48px;
+
+  text-align: left;
+
+  &::before,
+  &::after {
+    @include adaptive-value-base('top', 20, 12, 1);
+
+    content: '';
+
+    position: absolute;
+
+    width: 16px;
+    height: 2px;
+
+    background-color: var(--color-purple-250);
+    border-radius: 2px;
+  }
+
+  &::before {
+    right: 0;
+  }
+
+  &::after {
+    right: -8px;
+    transform: translateX(-50%) rotate(90deg);
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  &[data-state='closed'] {
+    &::after {
+      opacity: 1;
+    }
+  }
+}
+
+.content {
+  padding-top: 20px;
+  padding-right: 48px;
+
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--color-purple-700);
+
+  /* stylelint-disable-next-line */
+  @include mq(md) {
+    padding-right: 0;
+    font-size: 14px;
+  }
+
+  p {
+    &:not(:last-child) {
+      margin-bottom: 12px;
+    }
+  }
+}
