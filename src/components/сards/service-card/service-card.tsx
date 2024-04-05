@@ -1,4 +1,4 @@
-import { ComponentPropsWithoutRef, FC, ReactNode } from 'react'
+import { ComponentPropsWithoutRef, FC } from 'react'
 
 import { TypographyVariant } from '@/common'
 import { Typography } from '@/components'
@@ -8,7 +8,7 @@ import s from './service-card.module.scss'
 type Props = {
   icon: string
   iconBg: 'orange' | 'purple'
-  text?: ReactNode
+  text?: string
   title: string
 } & ComponentPropsWithoutRef<'article'>
 
@@ -21,13 +21,15 @@ export const ServiceCard: FC<Props> = ({ className, icon, iconBg = 'purple', tex
         className={s.icon}
         style={{
           backgroundColor: `${iconBg === 'purple' ? '#bd5dff' : '#ffa522'}`,
-          backgroundImage: `url(/assets/images/service-icons/${icon}.svg)`,
+          backgroundImage: `url(/assets/icons/service-icons/${icon}.svg)`,
         }}
       />
-      <Typography as={'h3'} variant={TypographyVariant.subtitle}>
+      <Typography as={'h3'} variant={TypographyVariant.strong1}>
         {title}
       </Typography>
-      {text}
+      <Typography as={'h3'} variant={TypographyVariant.caption2}>
+        {text}
+      </Typography>
     </article>
   )
 }

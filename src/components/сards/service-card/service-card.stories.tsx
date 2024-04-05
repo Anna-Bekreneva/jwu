@@ -4,7 +4,6 @@ import { Meta, StoryObj } from '@storybook/react'
 const meta = {
   argTypes: {
     iconBg: { control: { type: 'radio' }, options: ['purple', 'orange'] },
-    text: { control: { type: 'string' } },
   },
   component: ServiceCard,
   tags: ['autodocs'],
@@ -26,7 +25,7 @@ export const ServiceCardWithText: Story = {
   args: {
     icon: 'mobile-bilboards',
     iconBg: 'orange',
-    text: <p>Advertising on mobile billboards for your business </p>,
+    text: 'Advertising on mobile billboards for your business',
     title: 'Mobile Billboards',
   },
 }

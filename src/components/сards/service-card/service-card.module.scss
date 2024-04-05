@@ -12,6 +12,7 @@
 
   background-color: var(--color-white);
   border-radius: 20px;
+  box-shadow: 0 4px 40px 0 rgba(var(--box-shadow));
 
   /* stylelint-disable-next-line */
   @include mq(md) {

@@ -16,10 +16,10 @@
     "@radix-ui/react-accordion": "^1.1.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.22.3"
+    "react-router-dom": "^6.22.3",
+    "react-tooltip": "^5.26.3"
   },
   "devDependencies": {
-    "@chromatic-com/storybook": "1.2.25",
     "@it-incubator/eslint-config": "^1.0.2",
     "@it-incubator/prettier-config": "^0.1.2",
     "@it-incubator/stylelint-config": "^1.0.3",
