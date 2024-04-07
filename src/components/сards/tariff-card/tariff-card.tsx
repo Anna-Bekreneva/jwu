@@ -2,37 +2,88 @@ import { FC, useState } from 'react'
 import { Tooltip } from 'react-tooltip'
 
 import { TypographyVariant } from '@/common'
-import { Typography } from '@/components'
+import { Picture, PicturePropsType, Typography } from '@/components'
+import { Swiper, SwiperSlide } from 'swiper/react'
 
 import 'react-tooltip/dist/react-tooltip.css'
+import 'swiper/css/bundle'
 
 import s from './tariff-card.module.scss'
 
 type PriceType = { hint?: string; id: string; name: string; value: string }
 
-type Props = {
-  items: PriceType[]
+export type TariffType = {
+  additionalText?: string
+  gallery?: PicturePropsType[]
+  items?: PriceType[]
   pay: string
   text: string
   title: string
+  type?: 'exclusive' | 'standard'
 }
-export const TariffCard: FC<Props> = ({ items, pay, text, title }) => {
+export const TariffCard: FC<TariffType> = ({
+  additionalText,
+  gallery,
+  items,
+  pay,
+  text,
+  title,
+  type = 'standard',
+}) => {
+  const cardClassName = `${s.card} ${s[String(type)]}`
+
   return (
-    <article className={s.card}>
-      <Typography as={'h3'} className={s.title} variant={TypographyVariant.subtitle}>
-        {title}
-      </Typography>
-      <Typography variant={TypographyVariant.body2}>{text}</Typography>
-      <ul className={s.items}>
-        {items.map(item => (
-          <li key={item.id}>
-            <ItemPrice hint={item.hint} id={item.id} name={item.name} value={item.value} />
-          </li>
-        ))}
-      </ul>
-      <Typography as={'span'} className={s.pay} variant={TypographyVariant.subtitle}>
-        {pay}
-      </Typography>
+    <article className={cardClassName}>
+      <div className={s.content}>
+        <Typography
+          as={'h3'}
+          className={s.title}
+          variant={type === 'exclusive' ? TypographyVariant.title2 : TypographyVariant.subtitle}
+        >
+          {title}
+        </Typography>
+        <Typography className={s.text} variant={TypographyVariant.body2}>
+          {text}
+        </Typography>
+        {gallery && (
+          <div className={s.galleryWrapper}>
+            <Swiper className={s.gallery} spaceBetween={8}>
+              {gallery.map((item, index) => (
+                <SwiperSlide className={s.galleryItem} key={index}>
+                  <a data-fancybox={'gallery'} href={item.src}>
+                    <Picture
+                      alt={item.alt}
+                      avif={item.avif}
+                      className={s.galleryPicture}
+                      src={item.src}
+                      webp={item.webp}
+                    />
+                  </a>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </div>
+        )}
+        {additionalText && (
+          <Typography className={s.text} variant={TypographyVariant.body2}>
+            {additionalText}
+          </Typography>
+        )}
+      </div>
+      <div className={s.bottom}>
+        {items?.length && (
+          <ul className={s.priceItems}>
+            {items.map(item => (
+              <li className={s.priceItem} key={item.id}>
+                <ItemPrice hint={item.hint} id={item.id} name={item.name} value={item.value} />
+              </li>
+            ))}
+          </ul>
+        )}
+        <Typography as={'span'} className={s.pay} variant={TypographyVariant.subtitle}>
+          {pay}
+        </Typography>
+      </div>
     </article>
   )
 }

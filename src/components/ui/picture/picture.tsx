@@ -8,7 +8,7 @@ type Props = {
 }
 
 export type PicturePropsType = Props & Omit<ComponentPropsWithoutRef<'img'>, keyof Props>
-export const Picture: FC<PicturePropsType> = ({ alt, avif, className, src, webp, ...rest }) => {
+export const Picture: FC<PicturePropsType> = ({ alt, avif, src, webp, ...rest }) => {
   return (
     <picture>
       <source srcSet={avif} type={'image/avif'} />
