@@ -11,7 +11,7 @@ const meta = {
 export default meta
 type Story = StoryObj<typeof meta>
 
-export const StandartTariffCardDefault: Story = {
+export const StandardTariffCard: Story = {
   args: {
     items: [
       {
@@ -36,5 +36,119 @@ export const StandartTariffCardDefault: Story = {
     pay: '$3000/month',
     text: 'If you choose the Starter Boost plan your advertising shows:',
     title: 'Starter Boost',
+  },
+}
+
+export const ExclusiveTariffCard: Story = {
+  render: () => {
+    const args = {
+      additionalText:
+        'Event rental is available for a minimum of two hours, while other terms are discussed individually',
+      fancyboxName: 'test2',
+      gallery: [
+        {
+          alt: '1',
+          avif: '/assets/images/people.avif',
+          src: '/assets/images/people.jpg',
+          webp: '/assets/images/people.webg',
+        },
+        {
+          alt: '1',
+          avif: '/assets/images/people.avif',
+          src: '/assets/images/people.jpg',
+          webp: '/assets/images/people.webg',
+        },
+        {
+          alt: '1',
+          avif: '/assets/images/people.avif',
+          src: '/assets/images/people.jpg',
+          webp: '/assets/images/people.webg',
+        },
+        {
+          alt: '1',
+          avif: '/assets/images/people.avif',
+          src: '/assets/images/people.jpg',
+          webp: '/assets/images/people.webg',
+        },
+        {
+          alt: '1',
+          avif: '/assets/images/people.avif',
+          src: '/assets/images/people.jpg',
+          webp: '/assets/images/people.webg',
+        },
+        {
+          alt: '1',
+          avif: '/assets/images/people.avif',
+          src: '/assets/images/people.jpg',
+          webp: '/assets/images/people.webg',
+        },
+        {
+          alt: '1',
+          avif: '/assets/images/people.avif',
+          src: '/assets/images/people.jpg',
+          webp: '/assets/images/people.webg',
+        },
+        {
+          alt: '1',
+          avif: '/assets/images/people.avif',
+          src: '/assets/images/people.jpg',
+          webp: '/assets/images/people.webg',
+        },
+        {
+          alt: '1',
+          avif: '/assets/images/people.avif',
+          src: '/assets/images/people.jpg',
+          webp: '/assets/images/people.webg',
+        },
+        {
+          alt: '1',
+          avif: '/assets/images/people.avif',
+          src: '/assets/images/people.jpg',
+          webp: '/assets/images/people.webg',
+        },
+        {
+          alt: '1',
+          avif: '/assets/images/people.avif',
+          src: '/assets/images/people.jpg',
+          webp: '/assets/images/people.webg',
+        },
+        {
+          alt: '1',
+          avif: '/assets/images/people.avif',
+          src: '/assets/images/people.jpg',
+          webp: '/assets/images/people.webg',
+        },
+      ],
+      items: [
+        {
+          id: '2',
+          name: 'each 10 min',
+          value: '60 sec',
+        },
+        {
+          hint:
+            'If you choose the Starter Boost plan your advertising shows:\n' +
+            'You are given 60 sec in a 10-min long ad block. The recommended video length is up to 15 sec',
+          id: '1',
+          name: 'each 10 min',
+          value: '60 sec',
+        },
+        {
+          id: '3',
+          name: 'each 10 min',
+          value: '60 sec',
+        },
+      ],
+      pay: '$3000/month',
+      text: 'If you choose the Starter Boost plan your advertising shows:',
+      title: 'Starter Boost',
+      type: 'exclusive',
+    }
+
+    return (
+      <div style={{ maxWidth: '600px' }}>
+        <TariffCard {...args} type={'exclusive'}></TariffCard>
+      </div>
+    )
   },
 }

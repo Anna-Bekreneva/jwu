@@ -5,9 +5,9 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
-  '@fancyapps/fancybox':
-    specifier: ^3.5.7
-    version: 3.5.7(jquery@3.7.1)
+  '@fancyapps/ui':
+    specifier: ^5.0.35
+    version: 5.0.35
   '@radix-ui/react-accordion':
     specifier: ^1.1.2
     version: 1.1.2(@types/react-dom@18.2.22)(@types/react@18.2.69)(react-dom@18.2.0)(react@18.2.0)
@@ -1723,12 +1723,8 @@ packages:
     resolution: {integrity: sha512-cEee/Z+I12mZcFJshKcCqC8tuX5hG3s+d+9nZ3LabqKF1vKdF41B92pJVCBggjAGORAeOzyyDDKrZwIkLffeOQ==}
     dev: true
 
-  /@fancyapps/fancybox@3.5.7(jquery@3.7.1):
-    resolution: {integrity: sha512-rcEtu8t+WnmqIDV/Wfm1yvy/nDdwc7YV25j9HLxGC2/WOsUhk9rcWg2nB8g1BrjRt9zaoADdjHTU6ILYTJzBBg==}
-    peerDependencies:
-      jquery: '>=1.9.0'
-    dependencies:
-      jquery: 3.7.1
+  /@fancyapps/ui@5.0.35:
+    resolution: {integrity: sha512-2aTAksmugIDmadEEgK41i3RyNGE2zK7liOSXC41Oh7Lh1RBHpNyz97vbzKfuik9Pwx5B8hGGd8DEPcjyXbS3NQ==}
     dev: false
 
   /@floating-ui/core@1.6.0:
@@ -6339,10 +6335,6 @@ packages:
       filelist: 1.0.4
       minimatch: 3.1.2
     dev: true
-
-  /jquery@3.7.1:
-    resolution: {integrity: sha512-m4avr8yL8kmFN8psrbFFFmB/If14iN5o9nw/NgnnM+kybDJpRsAynV2BsfpTYrTRysYUdADVD7CkUUizgkpLfg==}
-    dev: false
 
   /js-tokens@4.0.0:
     resolution: {integrity: sha512-RdJUflcE3cUzKiMqQgsCu06FPu9UdIJO0beYbPhHN4k6apgJtifcoCtT9bcxOpYBtpD2kCM6Sbzg4CausW/PKQ==}

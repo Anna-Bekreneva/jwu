@@ -1,10 +1,12 @@
-import { FC, useState } from 'react'
+import { FC, useEffect, useState } from 'react'
 import { Tooltip } from 'react-tooltip'
 
 import { TypographyVariant } from '@/common'
 import { Picture, PicturePropsType, Typography } from '@/components'
+import { Fancybox as NativeFancybox } from '@fancyapps/ui'
 import { Swiper, SwiperSlide } from 'swiper/react'
 
+import '@fancyapps/ui/dist/fancybox/fancybox.css'
 import 'react-tooltip/dist/react-tooltip.css'
 import 'swiper/css/bundle'
 
@@ -14,7 +16,8 @@ type PriceType = { hint?: string; id: string; name: string; value: string }
 
 export type TariffType = {
   additionalText?: string
-  gallery?: PicturePropsType[]
+  fancyboxName?: string
+  gallery?: Array<PicturePropsType & { fancyboxHref?: string }>
   items?: PriceType[]
   pay: string
   text: string
@@ -23,6 +26,7 @@ export type TariffType = {
 }
 export const TariffCard: FC<TariffType> = ({
   additionalText,
+  fancyboxName,
   gallery,
   items,
   pay,
@@ -31,6 +35,14 @@ export const TariffCard: FC<TariffType> = ({
   type = 'standard',
 }) => {
   const cardClassName = `${s.card} ${s[String(type)]}`
+
+  useEffect(() => {
+    NativeFancybox.bind(`[data-fancybox=${fancyboxName}]`)
+
+    return () => {
+      NativeFancybox.unbind(`[data-fancybox=${fancyboxName}]`)
+    }
+  })
 
   return (
     <article className={cardClassName}>
@@ -50,7 +62,7 @@ export const TariffCard: FC<TariffType> = ({
             <Swiper className={s.gallery} spaceBetween={8}>
               {gallery.map((item, index) => (
                 <SwiperSlide className={s.galleryItem} key={index}>
-                  <a data-fancybox={'gallery'} href={item.src}>
+                  <a data-fancybox={fancyboxName} href={item.fancyboxHref ?? item.src}>
                     <Picture
                       alt={item.alt}
                       avif={item.avif}
