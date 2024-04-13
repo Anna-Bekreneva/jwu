@@ -1,0 +1,36 @@
+@import '../../../styles/mixins';
+
+.root {
+  @include flex-direction;
+
+  gap: 24px;
+}
+
+.list {
+  display: flex;
+  gap: 50px;
+}
+
+.button {
+  text-transform: capitalize;
+  transition: color 0.3s;
+
+  svg {
+    bottom: -20px;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  &[data-state='active'] {
+    color: var(--color-orange-400);
+
+    svg {
+      opacity: 1;
+    }
+  }
+
+  /* stylelint-disable-next-line */
+  @include mq(sm) {
+    font-size: 24px;
+  }
+}

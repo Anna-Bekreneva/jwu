@@ -1,10 +1,10 @@
-import {Meta, StoryObj} from "@storybook/react";
-import {ReviewCard} from "@/components/сards/review-card/review-card";
+import { ReviewCard } from '@/components/сards/review-card/review-card'
+import { Meta, StoryObj } from '@storybook/react'
 
 const meta = {
   argTypes: {
-    name: { control: {type: 'text'} },
-    position: { control: {type: 'text'} },
+    name: { control: { type: 'text' } },
+    position: { control: { type: 'text' } },
   },
   component: ReviewCard,
   tags: ['autodocs'],
@@ -15,21 +15,31 @@ export default meta
 type Story = StoryObj<typeof meta>
 
 export const ReviewCardDefault: Story = {
-  render: (args) => {
-
-    const text = ['Spotted your mobile billboard ad, and I can\'t help but applaud its eye-catching design! Incredibly creative with vibrant colors, it\'s truly memorable. I even took a photo and shared it with friends!']
+  render: args => {
+    const text = [
+      "Spotted your mobile billboard ad, and I can't help but applaud its eye-catching design! Incredibly creative with vibrant colors, it's truly memorable. I even took a photo and shared it with friends!",
+    ]
 
     return (
-      <div style={{
-        backgroundColor: 'white',
-        borderRadius: '20px',
-        padding: '50px',
-        maxWidth: '600px',
-        width: '100%'
-      }}>
-        <ReviewCard text={text} name={args.name ?? 'Vitaliy Kusaev'} position={args.position ?? 'Investigator'} src={'/assets/images/reviews/1.jpg'} alt={'ava'} avif={'/assets/images/reviews/1.avif'}
-                    webp={'/assets/images/reviews/1.webp'}/>
+      <div
+        style={{
+          backgroundColor: 'white',
+          borderRadius: '20px',
+          maxWidth: '600px',
+          padding: '50px',
+          width: '100%',
+        }}
+      >
+        <ReviewCard
+          alt={'ava'}
+          avif={'/assets/images/reviews/1.avif'}
+          name={args.name ?? 'Vitaliy Kusaev'}
+          position={args.position ?? 'Investigator'}
+          src={'/assets/images/reviews/1.jpg'}
+          text={text}
+          webp={'/assets/images/reviews/1.webp'}
+        />
       </div>
     )
-  }
+  },
 }

@@ -1,10 +1,10 @@
-import {StatisticCard} from "@/components";
-import {Meta, StoryObj} from "@storybook/react";
+import { StatisticCard } from '@/components'
+import { Meta, StoryObj } from '@storybook/react'
 
 const meta = {
   argTypes: {
-    text: { control: { type: 'text' }},
-    numbers: { control: { type: 'text' }},
+    numbers: { control: { type: 'text' } },
+    text: { control: { type: 'text' } },
   },
   component: StatisticCard,
   tags: ['autodocs'],
@@ -16,7 +16,7 @@ type Story = StoryObj<typeof meta>
 
 export const StatisticCardDefault: Story = {
   args: {
+    numbers: '47.7%',
     text: 'of people find Mobile Billboards to be effective on brand awareness',
-    numbers: '47.7%'
   },
 }

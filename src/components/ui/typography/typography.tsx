@@ -8,6 +8,7 @@ import s from './typography.module.scss'
 type Props<T> = {
   as?: T
   isLine?: boolean
+  partLineFromText?: number
   variant?: keyof typeof TypographyVariant
 }
 export const Typography = <T extends ElementType = 'p'>(
@@ -18,13 +19,14 @@ export const Typography = <T extends ElementType = 'p'>(
     children,
     className,
     isLine,
+    partLineFromText = 3,
     variant = TypographyVariant.body1,
     ...rest
   } = props
 
   const typographyClassName = `${isLine && s.line} ${s[String(variant)]} ${className}`
 
-  const { path, svgWidth, typographyRef } = useTypography()
+  const { path, svgWidth, typographyRef } = useTypography(partLineFromText, isLine)
 
   return (
     // @ts-expect-error TS2322

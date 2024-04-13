@@ -1,24 +1,44 @@
+import { FC } from 'react'
+
+import { TypographyVariant } from '@/common'
+import { Picture, PicturePropsType, Typography } from '@/components'
+
 import s from './review-card.module.scss'
-import {FC} from "react";
-import {Picture, PicturePropsType, Typography} from "@/components";
-import {TypographyVariant} from "@/common";
 
 type Props = {
-  text: string[]
+  className?: string
   name: string
   position?: string
-  className?: string
+  text: string[]
 } & Partial<Omit<PicturePropsType, 'className'>>
-export const ReviewCard: FC<Props> = ({ className, name, text, position, alt = 'ava', src, ...rest }) => {
+export const ReviewCard: FC<Props> = ({
+  alt = 'ava',
+  className,
+  name,
+  position,
+  src,
+  text,
+  ...rest
+}) => {
   return (
     <article className={`${s.card} ${className}`}>
       <div className={s.text}>
-        {text.map((item, index) => <Typography key={index} >{item}</Typography> )}
+        {text.map((item, index) => (
+          <Typography key={index}>{item}</Typography>
+        ))}
       </div>
       <div className={s.author}>
-        { src && <Picture src={src} alt={alt} { ...rest} className={s.ava}/> }
-        <Typography className={s.name} variant={TypographyVariant.body2}> {name} </Typography>
-        { position && <Typography className={s.position} variant={TypographyVariant.caption1}> {position} </Typography> }
+        {src && <Picture alt={alt} src={src} {...rest} className={s.ava} />}
+        <Typography className={s.name} variant={TypographyVariant.body2}>
+          {' '}
+          {name}{' '}
+        </Typography>
+        {position && (
+          <Typography className={s.position} variant={TypographyVariant.caption1}>
+            {' '}
+            {position}{' '}
+          </Typography>
+        )}
       </div>
     </article>
   )
