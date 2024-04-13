@@ -1,0 +1,21 @@
+@import '../../../styles/mixins';
+
+.card {
+  background-color: var(--color-white);
+  padding: 24px 40px;
+  border-radius: 16px;
+  box-shadow: var(--box-shadow);
+
+  @include flex-direction($align-items: flex-start, $justify-content: space-between);
+  @include mq(lg) {
+    padding: 28px;
+  }
+}
+
+.title {
+  margin-bottom: 20px;
+}
+
+.text {
+  margin-top: auto;
+}
