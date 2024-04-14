@@ -1,0 +1,58 @@
+@import '../../../styles/mixins';
+
+.root {
+  @include flex-normal($justify-content: flex-start);
+
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.inner {
+  @include flex-normal($justify-content: flex-start);
+
+  gap: 8px;
+
+  button {
+    position: relative;
+
+    width: 16px;
+    height: 16px;
+
+    border: 2px solid var(--color-magenta-500);
+    border-radius: 50%;
+
+    &::before {
+      content: '';
+
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+      width: 8px;
+      height: 8px;
+
+      opacity: 0;
+      background-color: var(--color-magenta-500);
+      border-radius: 50%;
+
+      transition: opacity 0.3s;
+    }
+
+    &[data-state='checked'] {
+      &::before {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.name {
+  font-weight: 500;
+  color: var(--color-purple-700);
+  text-transform: capitalize;
+}
+
+.errorMessage {
+  color: var(--color-red-600);
+}
