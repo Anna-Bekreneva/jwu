@@ -1,15 +1,19 @@
 @import '../../../styles/mixins';
 
-.root {
-  @include flex-normal($justify-content: flex-start);
+.root,
+.inner {
+  display: flex;
+  align-items: center;
+}
 
+.root {
+  display: flex;
   flex-wrap: wrap;
   gap: 16px;
+  align-items: center;
 }
 
 .inner {
-  @include flex-normal($justify-content: flex-start);
-
   gap: 8px;
 
   button {

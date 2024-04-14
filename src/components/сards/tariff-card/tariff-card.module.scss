@@ -25,10 +25,10 @@
   }
 
   .priceItems {
-    @include flex-normal($justify-content: flex-start);
-
+    display: flex;
     flex-wrap: wrap;
     gap: 12px 20px;
+    align-items: center;
 
     /* stylelint-disable-next-line */
     @include mq(sm) {
@@ -171,9 +171,9 @@
 }
 
 .value {
-  @include flex-normal($justify-content: flex-start);
-
+  display: flex;
   gap: 8px;
+  align-items: center;
 }
 
 .showHint {
