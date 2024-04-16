@@ -1,4 +1,4 @@
-import { ChangeEvent, ComponentPropsWithoutRef, ElementType } from 'react'
+import { ComponentPropsWithoutRef, ElementType } from 'react'
 
 import { TypographyVariant } from '@/common'
 import { Typography } from '@/components'
@@ -33,7 +33,12 @@ export const Field = <T extends ElementType = 'input'>(
         id={id}
         onChange={e => onValueChange(e.currentTarget.value)}
         {...rest}
-      ></Tag>
+      />
+      {/*{errorMessage && (*/}
+      {/*  <Typography className={s.errorMessage} variant={TypographyVariant.caption}>*/}
+      {/*    {errorMessage}*/}
+      {/*  </Typography>*/}
+      {/*)}*/}
     </div>
   )
 }

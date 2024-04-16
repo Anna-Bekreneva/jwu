@@ -1,5 +1,6 @@
+import sprite from '@/assets/icons/sprite.svg'
 import { ButtonVariant } from '@/common'
-import { Button, EmailIcon, FacebookIcon } from '@/components'
+import { Button, FacebookIcon } from '@/components'
 import { Meta, StoryObj } from '@storybook/react'
 
 const meta = {
@@ -38,7 +39,19 @@ export const PrimaryWithIcon: Story = {
 export const SecondaryWithIcon: Story = {
   args: {
     as: 'a',
-    children: <EmailIcon fill={'none'} stroke={'#ED008C'} />,
+    children: (
+      <svg
+        aria-hidden
+        fill={'none'}
+        height={24}
+        stroke={'#ED008C'}
+        viewBox={'0 0 24 24'}
+        width={24}
+        xmlns={'http://www.w3.org/2000/svg'}
+      >
+        <use xlinkHref={`${sprite}#email`} />
+      </svg>
+    ),
     href: 'mailto:test@gmail.com',
     isIcon: true,
     target: '_blank',

@@ -1,3 +1,5 @@
+import { HomePage } from '@/pages'
+
 export function App() {
-  return <div className={'wrapper'}>Hello</div>
+  return <HomePage />
 }

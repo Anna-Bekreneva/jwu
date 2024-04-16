@@ -11,10 +11,11 @@
   }
 }
 
-.item {
+.linkWithIcon {
   display: flex;
   gap: 10px;
   align-items: center;
+  font-weight: 500;
 }
 
 .icon {

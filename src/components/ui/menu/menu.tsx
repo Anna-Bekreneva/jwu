@@ -38,17 +38,22 @@ type MenuItemProps = {
 const MenuItem: FC<MenuItemProps> = ({ href, icon, text }) => {
   return (
     <li className={s.item}>
-      {icon && (
-        <svg
-          aria-hidden
-          className={s.icon}
-          viewBox={'0 0 24 24'}
-          xmlns={'http://www.w3.org/2000/svg'}
-        >
-          <use height={24} width={24} xlinkHref={`${sprite}#${icon}`} />
-        </svg>
-      )}
-      <Typography as={'a'} className={s.link} href={href} variant={TypographyVariant.strong2}>
+      <Typography
+        as={'a'}
+        className={`${s.link} ${icon && s.linkWithIcon}`}
+        href={href}
+        variant={TypographyVariant.strong2}
+      >
+        {icon && (
+          <svg
+            aria-hidden
+            className={s.icon}
+            viewBox={'0 0 24 24'}
+            xmlns={'http://www.w3.org/2000/svg'}
+          >
+            <use height={24} width={24} xlinkHref={`${sprite}#${icon}`} />
+          </svg>
+        )}
         {text}
       </Typography>
     </li>

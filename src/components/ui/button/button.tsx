@@ -16,7 +16,7 @@ const ButtonPolymorph = <T extends ElementType = 'button'>(
 ) => {
   const { as: Tag = 'button', className, isIcon, variant = ButtonVariant.primary, ...rest } = props
 
-  const buttonClassName = `${s.button} ${isIcon && s.isIcon} ${s[String(variant)]}`
+  const buttonClassName = `${s.button} ${isIcon && s.isIcon} ${s[String(variant)]} ${className}`
 
   return (
     // @ts-expect-error TS2322
