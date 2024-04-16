@@ -11,7 +11,7 @@ export const Header: FC = () => {
 
   return (
     <header className={s.header}>
-      {isOpenMenu && <div aria-hidden className={'overlay'}></div>}
+      {isOpenMenu && <div aria-hidden className={'overlay'} />}
       <div className={s.wrapper} data-open={isOpenMenu}>
         <div className={'container container--large'}>
           <nav className={s.nav}>

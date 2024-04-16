@@ -10,8 +10,11 @@ type Props<T extends ElementType> = {
   variant?: keyof typeof ButtonVariant
 }
 
+export type ButtonPropsType<T extends ElementType> = Props<T> &
+  Omit<ComponentPropsWithoutRef<T>, keyof Props<T>>
+
 const ButtonPolymorph = <T extends ElementType = 'button'>(
-  props: Props<T> & Omit<ComponentPropsWithoutRef<T>, keyof Props<T>>,
+  props: ButtonPropsType<T>,
   ref: ElementRef<T>
 ) => {
   const { as: Tag = 'button', className, isIcon, variant = ButtonVariant.primary, ...rest } = props
