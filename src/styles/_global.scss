@@ -3,7 +3,7 @@
 body {
   @include adaptive-value-base('font-size', 20, 16, 1);
 
-  font-family: 'Valera Round', Roboto, sans-serif;
+  font-family: 'Varela Round', Roboto, sans-serif;
   font-weight: 400;
   line-height: 1.5;
   color: var(--color-purple-700);
@@ -31,6 +31,10 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+}
+
+main {
+  flex: 1 0 auto;
 }
 
 .section {
@@ -113,4 +117,31 @@ body {
 
 .swiper-slide {
   box-sizing: border-box;
+}
+
+.section-bottom {
+  @include flex-normal($align-items: flex-end, $justify-content: space-between);
+
+  gap: 30px;
+
+  /* stylelint-disable-next-line */
+  @include mq(md) {
+    @include flex-direction($justify-content: flex-start);
+
+    gap: 14px;
+  }
+
+  &__buttons {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+  }
+}
+
+.hero {
+  .swiper-wrapper {
+    align-items: stretch;
+    -webkit-transition-timing-function: linear !important;
+    transition-timing-function: linear !important;
+  }
 }

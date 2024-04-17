@@ -8,7 +8,7 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 
 import '@fancyapps/ui/dist/fancybox/fancybox.css'
 import 'react-tooltip/dist/react-tooltip.css'
-import 'swiper/css/bundle'
+import 'swiper/scss'
 
 import s from './tariff-card.module.scss'
 
