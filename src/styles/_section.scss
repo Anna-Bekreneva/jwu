@@ -1,0 +1,93 @@
+@import '../styles/mixins';
+
+.section {
+  @include adaptive-value-base('padding-top', 160, 80, 1);
+  @include adaptive-value-base('padding-bottom', 160, 80, 1);
+  padding-right: 20px;
+  padding-left: 20px;
+
+  &--bg {
+    border-radius: 20px;
+    background-color: var(--color-purple-100);
+
+    /* stylelint-disable-next-line */
+    @include mq(sm) {
+      border-radius: 0;
+    }
+  }
+
+  /* stylelint-disable-next-line */
+  @include mq(md) {
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  &__wrapper {
+    position: relative;
+  }
+
+  &__label {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    padding: 4px 8px;
+
+    border: 1px solid var(--color-purple-700);
+    border-radius: 100px;
+
+    /* stylelint-disable-next-line */
+    @include mq(xl) {
+      display: none;
+    }
+  }
+
+  &__top {
+    @include adaptive-value-base('margin-bottom', 60, 40, 1);
+    @include adaptive-value-base('gap', 25, 20, 1);
+    @include flex-direction;
+
+    width: 100%;
+    text-align: center;
+
+    /* stylelint-disable-next-line */
+    @include mq(lg, min) {
+      max-width: 940px;
+      margin-right: auto;
+      margin-left: auto;
+    }
+  }
+
+  &__bottom {
+    @include flex-normal($align-items: flex-end, $justify-content: space-between);
+
+    gap: 30px;
+
+    /* stylelint-disable-next-line */
+    @include mq(md) {
+      @include flex-direction($justify-content: flex-start);
+
+      gap: 14px;
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+
+    @include mq(sm) {
+      flex-direction: column;
+      width: 100%;
+    }
+  }
+
+  &__button {
+    white-space: nowrap;
+
+    /* stylelint-disable-next-line */
+    @include mq(sm) {
+      width: 100%;
+    }
+  }
+}

@@ -38,7 +38,7 @@ export const Videos: FC = () => {
         </div>
         <ul className={s.items}>
           {dataVideo.map((item, index) => (
-            <li className={s.item} key={index}>
+            <li className={`${s.item} card`} key={index}>
               <video autoPlay controls loop muted src={item.src}></video>
             </li>
           ))}
