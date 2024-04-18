@@ -143,16 +143,21 @@ export const Hero: FC = () => {
           </Swiper>
 
           <div className={s.container}>
-            <div className={'section-bottom'}>
+            <div className={'section__bottom'}>
               <Typography className={s.subtext}>
                 “We help people make their events unforgettable and&nbsp;businesses achieve their
                 goals” — <b>JWU&nbsp;Media</b>
               </Typography>
-              <div className={`${s.buttons} section-bottom__buttons`}>
-                <Button as={'a'} className={s.button} href={'#'}>
+              <div className={'section__buttons'}>
+                <Button as={'a'} className={'section__button'} href={'#'}>
                   get a free consultation
                 </Button>
-                <Button as={'a'} className={s.button} href={'#'} variant={ButtonVariant.secondary}>
+                <Button
+                  as={'a'}
+                  className={'section__button'}
+                  href={'#'}
+                  variant={ButtonVariant.secondary}
+                >
                   See prices
                 </Button>
               </div>

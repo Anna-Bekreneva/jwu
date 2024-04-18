@@ -1,14 +1,15 @@
 import { FC } from 'react'
 
 import { Footer, Header } from '@/components'
-import { Hero } from '@/pages'
+import { Hero, Videos } from '@/pages'
 
 export const HomePage: FC = () => {
   return (
     <div className={'wrapper'}>
       <Header />
       <main>
-        <Hero></Hero>
+        <Hero />
+        <Videos />
       </main>
       <Footer />
     </div>
