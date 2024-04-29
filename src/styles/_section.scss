@@ -3,14 +3,17 @@
 .section {
   @include adaptive-value-base('padding-top', 160, 80, 1);
   @include adaptive-value-base('padding-bottom', 160, 80, 1);
-  padding-right: 20px;
-  padding-left: 20px;
 
   &--bg {
     border-radius: 20px;
     background-color: var(--color-purple-100);
+    margin: 0 20px;
 
     /* stylelint-disable-next-line */
+    @include mq(lg) {
+      margin: 0;
+    }
+
     @include mq(sm) {
       border-radius: 0;
     }

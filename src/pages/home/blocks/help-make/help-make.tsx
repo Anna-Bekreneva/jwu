@@ -1,4 +1,4 @@
-import React, { FC } from 'react'
+import { FC } from 'react'
 
 import { ButtonVariant, TypographyVariant } from '@/common'
 import { Button, Picture, ServiceCard, ServiceCardProps, Typography } from '@/components'
@@ -80,7 +80,7 @@ export const HelpMake: FC = () => {
     <section className={`${s.section} section section--bg`}>
       <div className={'container'}>
         <div className={'section__wrapper'}>
-          <div className={'section__top'}>
+          <div className={`${s.sectionTop} section__top`}>
             <Typography
               as={'span'}
               className={'section__label'}
@@ -93,19 +93,39 @@ export const HelpMake: FC = () => {
             </Typography>
           </div>
           <div className={s.wrapper}>
-            <ul className={s.items}>
-              {dataServices.map((item, index) => (
-                <li className={s.item} key={index}>
-                  <ServiceCard
-                    className={s.serviceCard}
-                    icon={item.icon}
-                    iconBg={item.iconBg}
-                    text={item.text}
-                    title={item.title}
-                  />
-                </li>
-              ))}
-            </ul>
+            <div className={s.info}>
+              <ul className={s.items}>
+                  {dataServices.map((item, index) => (
+                    <li className={s.item} key={index}>
+                      <ServiceCard
+                        className={s.serviceCard}
+                        icon={item.icon}
+                        iconBg={item.iconBg}
+                        text={item.text}
+                        title={item.title}
+                      />
+                    </li>
+                  ))}
+                </ul>
+              <div className={`${s.bottom} section__bottom`}>
+                <Typography className={s.subtext}>
+                  We will be happy to help make any&nbsp;of&nbsp;your&nbsp;events memorable
+                </Typography>
+                <div className={'section__buttons'}>
+                  <Button as={'a'} className={'section__button'} href={'#'}>
+                    get a free consultation
+                  </Button>
+                  <Button
+                    as={'a'}
+                    className={'section__button'}
+                    href={'#'}
+                    variant={ButtonVariant.secondary}
+                  >
+                    See prices
+                  </Button>
+                </div>
+              </div>
+            </div>
             <Swiper
               autoplay={{ delay: 8000 }}
               className={s.swiper}
@@ -128,24 +148,6 @@ export const HelpMake: FC = () => {
                 )
               })}
             </Swiper>
-          </div>
-          <div className={`${s.bottom} section__bottom`}>
-            <Typography className={s.subtext}>
-              We will be happy to help make any&nbsp;of&nbsp;your events memorable
-            </Typography>
-            <div className={'section__buttons'}>
-              <Button as={'a'} className={'section__button'} href={'#'}>
-                get a free consultation
-              </Button>
-              <Button
-                as={'a'}
-                className={'section__button'}
-                href={'#'}
-                variant={ButtonVariant.secondary}
-              >
-                See prices
-              </Button>
-            </div>
           </div>
         </div>
       </div>

@@ -1,5 +1,20 @@
 @import '../../../../styles/mixins';
 
+.container {
+  @include mq(md) {
+    //padding: 0;
+  }
+}
+
+.sectionTop {
+  margin-bottom: 60px;
+
+  /* stylelint-disable-next-line */
+  @include mq(xl) {
+    margin-bottom: 16px;
+  }
+}
+
 .wrapper {
   display: flex;
   gap: 20px;
@@ -8,16 +23,24 @@
   @include mq(xl) {
     flex-direction: column;
     justify-content: center;
-    margin-bottom: 24px;
   }
 }
 
-.items,
+.info {
+  @include flex-direction($align-items: flex-start, $justify-content: space-between);
+  gap: 24px;
+
+  @include mq(xl) {
+    flex-direction: column-reverse;
+  }
+}
+
+.info,
 .swiper {
   width: 100%;
   /* stylelint-disable-next-line */
   @include mq(xl, min) {
-    max-width: 828px;
+    flex-basis: 50%;
   }
 }
 
@@ -26,19 +49,28 @@
   flex-wrap: wrap;
   gap: 20px;
   align-self: start;
+  width: 100%;
 
   /* stylelint-disable-next-line */
   @include mq(md) {
     gap: 16px;
     overflow-x: auto;
-    padding-bottom: 18px;
+    padding: 40px 0 40px 0;
+    margin-top: -40px;
     flex-wrap: nowrap;
+    width: calc(100% + 40px);
   }
 }
 
 .item {
   flex-grow: 1;
   flex-basis: 192px;
+
+  &:first-child {
+    .serviceCard {
+      box-shadow: none;
+    }
+  }
 
   /* stylelint-disable-next-line */
   @include mq(md) {
@@ -52,16 +84,21 @@
 }
 
 .bottom {
-  @include mq(xl, min) {
-    max-width: 828px;
-    transform: translateY(-100%);
+  width: 100%;
+  margin-top: auto;
+  flex-wrap: wrap;
+
+  @include mq(xl) {
+    margin-top: 0;
+    flex-direction: column;
+    align-items:  center;
+    gap: 16px;
   }
 }
 
 .subtext {
-  @include mq(md, min) {
-    max-width: 323px;
-    @include line-clamp(3);
+  @include mq(xl, min) {
+    flex: 1 1 232px;
   }
 
   @include mq(xl) {
