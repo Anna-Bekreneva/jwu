@@ -1,4 +1,4 @@
-import React, { FC } from 'react'
+import { FC } from 'react'
 
 import { ButtonVariant, TypographyVariant } from '@/common'
 import { Button, Typography } from '@/components'

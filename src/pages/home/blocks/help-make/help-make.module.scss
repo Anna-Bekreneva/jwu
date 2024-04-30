@@ -38,6 +38,7 @@
 .info,
 .swiper {
   width: 100%;
+
   /* stylelint-disable-next-line */
   @include mq(xl, min) {
     flex-basis: 50%;
