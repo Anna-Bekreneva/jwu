@@ -5,13 +5,13 @@ import { Picture, PicturePropsType, Typography } from '@/components'
 
 import s from './review-card.module.scss'
 
-type Props = {
+export type ReviewCardPropsType = {
   className?: string
   name: string
   position?: string
   text: string[]
 } & Partial<Omit<PicturePropsType, 'className'>>
-export const ReviewCard: FC<Props> = ({
+export const ReviewCard: FC<ReviewCardPropsType> = ({
   alt = 'ava',
   className,
   name,
@@ -20,6 +20,7 @@ export const ReviewCard: FC<Props> = ({
   text,
   ...rest
 }) => {
+  console.log(position)
   return (
     <article className={`${s.card} ${className}`}>
       <div className={s.text}>
@@ -28,14 +29,12 @@ export const ReviewCard: FC<Props> = ({
         ))}
       </div>
       <div className={s.author}>
-        {src && <Picture alt={alt} src={src} {...rest} className={s.ava} />}
+        {src && <Picture alt={alt} src={src} loading={"lazy"} {...rest} className={s.ava} />}
         <Typography className={s.name} variant={TypographyVariant.body2}>
-          {' '}
           {name}{' '}
         </Typography>
         {position && (
           <Typography className={s.position} variant={TypographyVariant.caption1}>
-            {' '}
             {position}{' '}
           </Typography>
         )}

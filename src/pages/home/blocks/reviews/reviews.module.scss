@@ -1,0 +1,26 @@
+@import '../../../../styles/mixins';
+
+.swiperWrapper,
+.sliderWrapper {
+  margin: 0 auto;
+}
+
+.swiperWrapper {
+  max-width: 1200px;
+}
+
+.sliderWrapper {
+  max-width: 800px;
+}
+
+.slider {
+  width: 100%;
+  height: auto;
+  padding: 50px 50px 70px;
+  box-shadow: none;
+
+  /* stylelint-disable-next-line */
+  @include mq(md) {
+    padding: 36px 36px 60px;
+  }
+}
