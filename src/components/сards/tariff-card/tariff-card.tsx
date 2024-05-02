@@ -2,7 +2,7 @@ import { FC, useEffect, useState } from 'react'
 import { Tooltip } from 'react-tooltip'
 
 import { TypographyVariant } from '@/common'
-import { Picture, PicturePropsType, Typography } from '@/components'
+import { Picture, Typography } from '@/components'
 import { Fancybox as NativeFancybox } from '@fancyapps/ui'
 import { Swiper, SwiperSlide } from 'swiper/react'
 
@@ -17,7 +17,7 @@ type PriceType = { hint?: string; id: string; name: string; value: string }
 export type TariffType = {
   additionalText?: string
   fancyboxName?: string
-  gallery?: Array<PicturePropsType & { fancyboxHref?: string }>
+  gallery?: Array<{ alt: string, basePath: string, fancyboxHref?: string }>
   items?: PriceType[]
   pay: string
   text: string
@@ -59,16 +59,19 @@ export const TariffCard: FC<TariffType> = ({
         </Typography>
         {gallery && (
           <div className={s.galleryWrapper}>
-            <Swiper className={s.gallery} spaceBetween={8}>
+            <Swiper className={s.gallery} spaceBetween={8} loop={false}>
               {gallery.map((item, index) => (
                 <SwiperSlide className={s.galleryItem} key={index}>
-                  <a data-fancybox={fancyboxName} href={item.fancyboxHref ?? item.src}>
+                  <a data-fancybox={fancyboxName} href={item.fancyboxHref ?? `${item.basePath}.jpg`}>
                     <Picture
                       alt={item.alt}
-                      avif={item.avif}
                       className={s.galleryPicture}
-                      src={item.src}
-                      webp={item.webp}
+                      src={`${item.basePath}.jpg`}
+                      avif={`${item.basePath}.avif`}
+                      webp={`${item.basePath}.webp`}
+                      loading={'lazy'}
+                      width={132}
+                      height={75}
                     />
                   </a>
                 </SwiperSlide>

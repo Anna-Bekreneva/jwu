@@ -20,9 +20,7 @@ export const StandardTariffCard: Story = {
         value: '60 sec',
       },
       {
-        hint:
-          'If you choose the Starter Boost plan your advertising shows:\n' +
-          'You are given 60 sec in&nbsp;a&nbsp;10-min long ad&nbsp;block. The recommended video length is&nbsp;up&nbsp;to&nbsp;15 sec',
+        hint: 'You are given 60 sec in&nbsp;a&nbsp;10-min long ad&nbsp;block. The recommended video length is&nbsp;up&nbsp;to&nbsp;15 sec',
         id: '1',
         name: 'each 10 min',
         value: '60 sec',
@@ -48,75 +46,51 @@ export const ExclusiveTariffCard: Story = {
       gallery: [
         {
           alt: '1',
-          avif: '/assets/images/people.avif',
-          src: '/assets/images/people.jpg',
-          webp: '/assets/images/people.webg',
+          basePath: '/assets/images/people',
         },
         {
           alt: '1',
-          avif: '/assets/images/people.avif',
-          src: '/assets/images/people.jpg',
-          webp: '/assets/images/people.webg',
+          basePath: '/assets/images/people',
         },
         {
           alt: '1',
-          avif: '/assets/images/people.avif',
-          src: '/assets/images/people.jpg',
-          webp: '/assets/images/people.webg',
+          basePath: '/assets/images/people',
         },
         {
           alt: '1',
-          avif: '/assets/images/people.avif',
-          src: '/assets/images/people.jpg',
-          webp: '/assets/images/people.webg',
+          basePath: '/assets/images/people',
         },
         {
           alt: '1',
-          avif: '/assets/images/people.avif',
-          src: '/assets/images/people.jpg',
-          webp: '/assets/images/people.webg',
+          basePath: '/assets/images/people',
         },
         {
           alt: '1',
-          avif: '/assets/images/people.avif',
-          src: '/assets/images/people.jpg',
-          webp: '/assets/images/people.webg',
+          basePath: '/assets/images/people',
         },
         {
           alt: '1',
-          avif: '/assets/images/people.avif',
-          src: '/assets/images/people.jpg',
-          webp: '/assets/images/people.webg',
+          basePath: '/assets/images/people',
         },
         {
           alt: '1',
-          avif: '/assets/images/people.avif',
-          src: '/assets/images/people.jpg',
-          webp: '/assets/images/people.webg',
+          basePath: '/assets/images/people',
         },
         {
           alt: '1',
-          avif: '/assets/images/people.avif',
-          src: '/assets/images/people.jpg',
-          webp: '/assets/images/people.webg',
+          basePath: '/assets/images/people',
         },
         {
           alt: '1',
-          avif: '/assets/images/people.avif',
-          src: '/assets/images/people.jpg',
-          webp: '/assets/images/people.webg',
+          basePath: '/assets/images/people',
         },
         {
           alt: '1',
-          avif: '/assets/images/people.avif',
-          src: '/assets/images/people.jpg',
-          webp: '/assets/images/people.webg',
+          basePath: '/assets/images/people',
         },
         {
           alt: '1',
-          avif: '/assets/images/people.avif',
-          src: '/assets/images/people.jpg',
-          webp: '/assets/images/people.webg',
+          basePath: '/assets/images/people',
         },
       ],
       items: [
@@ -126,9 +100,7 @@ export const ExclusiveTariffCard: Story = {
           value: '60 sec',
         },
         {
-          hint:
-            'If you choose the Starter Boost plan your advertising shows:\n' +
-            'You are given 60 sec in a 10-min long ad block. The recommended video length is up to 15 sec',
+          hint: 'You are given 60 sec in\u00A0a\u00A010-min long ad\u00A0block. The recommended video length is\u00A0up\u00A0to\u00A015 sec',
           id: '1',
           name: 'each 10 min',
           value: '60 sec',
@@ -147,7 +119,7 @@ export const ExclusiveTariffCard: Story = {
 
     return (
       <div style={{ maxWidth: '600px' }}>
-        <TariffCard {...args} type={'exclusive'}></TariffCard>
+        <TariffCard {...args} type={'exclusive'}/>
       </div>
     )
   },

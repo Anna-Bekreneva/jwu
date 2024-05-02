@@ -4,6 +4,7 @@ import { Footer, Header } from '@/components'
 import { HelpMake, Hero, Videos } from '@/pages'
 import {Statistics} from "@/pages/home/blocks/statistics";
 import {Reviews} from "@/pages/home/blocks/reviews";
+import {Prices} from "@/pages/home/blocks/prices";
 
 export const HomePage: FC = () => {
   return (
@@ -15,6 +16,7 @@ export const HomePage: FC = () => {
         <HelpMake />
         <Statistics />
         <Reviews />
+        <Prices />
       </main>
       <Footer />
     </div>

@@ -1,0 +1,42 @@
+@import '../../../../styles/mixins';
+
+.wrapper {
+  width: 100%;
+  max-width: 1332px;
+  margin: 0 auto;
+}
+
+.tabs {
+  &:not(:last-child) {
+    @include adaptive-value-base('margin-bottom', 28, 16, 1);
+  }
+}
+
+.tabsList {
+  @include adaptive-value-base('margin-bottom', 28, 24, 1);
+
+  justify-content: center;
+}
+
+.items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  width: 100%;
+
+  /* stylelint-disable-next-line */
+  @include mq(md) {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: 12px;
+  }
+}
+
+.item {
+  flex: 1 1 280px;
+
+  /* stylelint-disable-next-line */
+  @include mq(md) {
+    flex: 1 0 318px;
+  }
+}
