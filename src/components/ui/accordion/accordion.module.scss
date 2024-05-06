@@ -13,6 +13,8 @@
 .trigger {
   @include adaptive-value-base('font-size', 24, 16, 1);
 
+  cursor: pointer;
+
   position: relative;
 
   display: inline-block;
