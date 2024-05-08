@@ -1,6 +1,7 @@
 @import '../../../styles/mixins';
 
 .exclusive {
+  justify-content: space-between;
   padding: 32px 24px;
 
   .content {
@@ -24,22 +25,31 @@
     }
   }
 
+  .info {
+    margin-top: auto;
+  }
+
   .priceItems {
-    display: flex;
+    @include flex-normal($justify-content: flex-start);
+
     flex-wrap: wrap;
     gap: 12px 20px;
-    align-items: center;
 
     /* stylelint-disable-next-line */
     @include mq(sm) {
       flex-direction: column;
-      margin-bottom: 12px;
+      align-items: flex-start;
     }
   }
 
   .priceItem {
-    flex-basis: 230px;
-    flex-grow: 1;
+    width: 100%;
+
+    /* stylelint-disable-next-line */
+    @include mq(sm, min) {
+      flex-basis: 230px;
+      flex-grow: 1;
+    }
   }
 }
 
@@ -59,6 +69,15 @@
     gap: 16px;
   }
 
+  .info {
+    justify-content: space-between;
+    height: 100%;
+  }
+
+  .pay {
+    margin-top: auto;
+  }
+
   .priceItems {
     @include flex-direction($align-items: normal);
 
@@ -67,9 +86,9 @@
 }
 
 .card {
-  @include flex-direction($align-items: normal, $justify-content: space-between);
-
   overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
   gap: 16px;
 
   width: 100%;
@@ -97,7 +116,7 @@
 
 .gallery {
   width: inherit;
-  margin: -30px 0 -30px -24px  !important;
+  margin: -30px 0 -30px -24px !important;
   padding: 30px 0 30px 24px !important;
 }
 
@@ -119,13 +138,12 @@
 }
 
 .content,
-.bottom {
+.info {
   @include flex-direction($align-items: stretch);
 }
 
-.bottom {
+.info {
   gap: 16px;
-  margin-top: auto;
 }
 
 .pay {

@@ -139,6 +139,22 @@ const tariffData: TariffType[] = [
         alt: '4',
         basePath: '/assets/images/gallery/gender-reveal-party',
       },
+      {
+        alt: '1',
+        basePath: '/assets/images/gallery/air-cinema',
+      },
+      {
+        alt: '2',
+        basePath: '/assets/images/gallery/family-home',
+      },
+      {
+        alt: '3',
+        basePath: '/assets/images/gallery/friends-selfie',
+      },
+      {
+        alt: '4',
+        basePath: '/assets/images/gallery/gender-reveal-party',
+      },
     ],
     items: [
       {
@@ -175,6 +191,22 @@ const tariffData: TariffType[] = [
         alt: '4',
         basePath: '/assets/images/gallery/gender-reveal-party',
       },
+      {
+        alt: '1',
+        basePath: '/assets/images/gallery/air-cinema',
+      },
+      {
+        alt: '2',
+        basePath: '/assets/images/gallery/family-home',
+      },
+      {
+        alt: '3',
+        basePath: '/assets/images/gallery/friends-selfie',
+      },
+      {
+        alt: '4',
+        basePath: '/assets/images/gallery/gender-reveal-party',
+      },
     ],
     pay: '$30.000/month',
     text: 'The Exclusive Business is the best choice for your personal needs',
@@ -184,7 +216,7 @@ const tariffData: TariffType[] = [
 ]
 
 export const Prices = memo(() => {
-  const [value, setValue] = useState<TabsValueType>(TabsVariant.standart)
+  const [value, setValue] = useState<TabsValueType>(TabsVariant.exclusive)
 
   const changeValueHandler = (value: TabsValueType) => setValue(value)
 
@@ -246,7 +278,7 @@ export const Prices = memo(() => {
                     .filter(tariff => tariff.type === 'exclusive')
                     .map((tariff, index) => {
                       return (
-                        <li className={s.item} key={index}>
+                        <li className={`${s.item} ${s.itemBig}`} key={index}>
                           <TariffCard {...tariff} />
                         </li>
                       )
@@ -254,15 +286,21 @@ export const Prices = memo(() => {
                 </ul>
               </TabsContent>
             </Tabs>
-            <div className={'section__bottom'}>
-              <Typography variant={TypographyVariant.body2}>
+            <div className={`${s.sectionBottom} section__bottom`}>
+              <Typography className={s.sectionBottomText} variant={TypographyVariant.body2}>
                 Enjoy 10-20% discounts when buying from 3 months!
               </Typography>
-              <div className={'section__buttons'}>
+              <div className={`${s.sectionButtons} section__buttons`}>
                 <Button as={'a'} className={'section__button'} href={'#'}>
                   Contact us
                 </Button>
-                <Button aria-label={'whatsapp'} as={'a'} href={'#'} isIcon>
+                <Button
+                  aria-label={'whatsapp'}
+                  as={'a'}
+                  className={s.sectionButton}
+                  href={'#'}
+                  isIcon
+                >
                   <svg
                     aria-hidden
                     className={`${s.icon} ${s.iconWhatsapp}`}
@@ -273,7 +311,7 @@ export const Prices = memo(() => {
                     <use xlinkHref={`${sprite}#whatsapp`} />
                   </svg>
                 </Button>
-                <Button aria-label={'email'} as={'a'} href={'#'} isIcon>
+                <Button aria-label={'email'} as={'a'} className={s.sectionButton} href={'#'} isIcon>
                   <svg
                     aria-hidden
                     className={`${s.icon} ${s.iconEmail}`}

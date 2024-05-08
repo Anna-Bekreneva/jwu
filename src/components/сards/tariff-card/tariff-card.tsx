@@ -17,7 +17,7 @@ type PriceType = { hint?: string; id: string; name: string; value: string }
 export type TariffType = {
   additionalText?: string
   fancyboxName?: string
-  gallery?: Array<{ alt: string, basePath: string, fancyboxHref?: string }>
+  gallery?: Array<{ alt: string; basePath: string; fancyboxHref?: string }>
   items?: PriceType[]
   pay: string
   text: string
@@ -59,19 +59,27 @@ export const TariffCard: FC<TariffType> = ({
         </Typography>
         {gallery && (
           <div className={s.galleryWrapper}>
-            <Swiper className={s.gallery} spaceBetween={8} loop={false}>
+            <Swiper
+              className={s.gallery}
+              slidesPerGroup={1}
+              slidesPerView={'auto'}
+              spaceBetween={8}
+            >
               {gallery.map((item, index) => (
                 <SwiperSlide className={s.galleryItem} key={index}>
-                  <a data-fancybox={fancyboxName} href={item.fancyboxHref ?? `${item.basePath}.jpg`}>
+                  <a
+                    data-fancybox={fancyboxName}
+                    href={item.fancyboxHref ?? `${item.basePath}.jpg`}
+                  >
                     <Picture
                       alt={item.alt}
-                      className={s.galleryPicture}
-                      src={`${item.basePath}.jpg`}
                       avif={`${item.basePath}.avif`}
-                      webp={`${item.basePath}.webp`}
-                      loading={'lazy'}
-                      width={132}
+                      className={s.galleryPicture}
                       height={75}
+                      loading={'lazy'}
+                      src={`${item.basePath}.jpg`}
+                      webp={`${item.basePath}.webp`}
+                      width={132}
                     />
                   </a>
                 </SwiperSlide>
@@ -85,7 +93,7 @@ export const TariffCard: FC<TariffType> = ({
           </Typography>
         )}
       </div>
-      <div className={s.bottom}>
+      <div className={s.info}>
         {items?.length && (
           <ul className={s.priceItems}>
             {items.map(item => (

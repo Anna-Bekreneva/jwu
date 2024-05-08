@@ -5,9 +5,9 @@
   @include adaptive-value-base('padding-bottom', 160, 80, 1);
 
   &--bg {
-    border-radius: 20px;
-    background-color: var(--color-purple-100);
     margin: 0 20px;
+    background-color: var(--color-purple-100);
+    border-radius: 20px;
 
     /* stylelint-disable-next-line */
     @include mq(lg) {
@@ -75,10 +75,11 @@
   }
 
   &__buttons {
-    display: flex;
-    gap: 8px;
-    align-items: center;
+    @include flex-normal($justify-content: flex-start);
 
+    gap: 8px;
+
+    /* stylelint-disable-next-line */
     @include mq(sm) {
       flex-direction: column;
       width: 100%;

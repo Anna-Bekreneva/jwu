@@ -29,10 +29,9 @@ type TabsTriggerPropsType = {
 } & ComponentPropsWithoutRef<'button'>
 export const TabsTrigger: FC<TabsTriggerPropsType> = ({ value, ...props }) => {
   return (
-    <TabsRadix.Trigger asChild value={value}>
+    <TabsRadix.Trigger asChild className={s.button} value={value}>
       <Typography
         as={'button'}
-        className={s.button}
         isLine
         partLineFromText={1}
         type={'button'}
