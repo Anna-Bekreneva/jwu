@@ -1,7 +1,7 @@
 import { FC } from 'react'
 
 import { Footer, Header } from '@/components'
-import { HelpMake, Hero, Prices, Questions, Reviews, Statistics, Videos } from '@/pages'
+import { HelpMake, Hero, Instagram, Prices, Questions, Reviews, Statistics, Videos } from '@/pages'
 
 export const HomePage: FC = () => {
   return (
@@ -15,6 +15,7 @@ export const HomePage: FC = () => {
         <Reviews />
         <Prices />
         <Questions />
+        <Instagram />
       </main>
       <Footer />
     </div>

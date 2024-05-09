@@ -1,4 +1,4 @@
-import React, { FC } from 'react'
+import { FC } from 'react'
 
 import { ButtonVariant, TypographyVariant } from '@/common'
 import {
@@ -102,7 +102,6 @@ export const Hero: FC = () => {
           </div>
           <Swiper
             autoplay={{ delay: 0.2 }}
-            centeredSlides
             className={s.swiper}
             freeMode
             loop
