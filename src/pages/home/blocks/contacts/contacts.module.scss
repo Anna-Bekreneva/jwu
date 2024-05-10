@@ -1,0 +1,37 @@
+@import '../../../../styles/mixins';
+
+.top {
+  @include mq(lg, min) {
+    display: none;
+  }
+}
+
+.wrapper {
+  @include flex-normal($justify-content: flex-end);
+
+  position: relative;
+
+  //@include adaptive-value-base('min-height', 700, 250, 1);
+}
+
+.map {
+  @include bg($background-size: cover);
+  @include adaptive-value-base('height', 700, 250, 1);
+
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+
+  width: 100%;
+
+  background-position: 40% center;
+  border-radius: 20px;
+}
+
+.form {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 584px;
+}
