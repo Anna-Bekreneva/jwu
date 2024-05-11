@@ -7,31 +7,48 @@
 }
 
 .wrapper {
-  @include flex-normal($justify-content: flex-end);
+  @include flex-normal;
 
   position: relative;
 
-  //@include adaptive-value-base('min-height', 700, 250, 1);
+  /* stylelint-disable-next-line */
+  @include mq(lg) {
+    flex-direction: column-reverse;
+    gap: 28px;
+  }
+}
+
+.formWrapper {
+  width: 100%;
+  max-width: 1676px;
 }
 
 .map {
   @include bg($background-size: cover);
   @include adaptive-value-base('height', 700, 250, 1);
 
-  position: absolute;
-  top: 50%;
-  left: 0;
-  transform: translateY(-50%);
-
   width: 100%;
-
-  background-position: 40% center;
+  background-position: right center;
   border-radius: 20px;
+
+  /* stylelint-disable-next-line */
+  @include mq(lg, min) {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+  }
 }
 
 .form {
   position: relative;
   z-index: 2;
+
   width: 100%;
-  max-width: 584px;
+
+  /* stylelint-disable-next-line */
+  @include mq(lg, min) {
+    max-width: 584px;
+    margin-left: auto;
+  }
 }

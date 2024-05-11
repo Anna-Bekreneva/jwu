@@ -26,6 +26,15 @@
   }
 }
 
+.fieldsBase {
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.item {
+  flex: 1 1 255px;
+}
+
 .subtitle {
   display: inline-block;
   margin-bottom: 8px;

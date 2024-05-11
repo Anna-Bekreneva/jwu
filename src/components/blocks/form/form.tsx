@@ -45,27 +45,36 @@ export const Form = memo(({ className }: Props) => {
         Fill out the form and we will contact you shortly
       </Typography>
       <div className={s.content}>
-        <fieldset className={s.fields}>
+        <fieldset className={`${s.fields} ${s.fieldsBase}`}>
           <legend className={'sr-only'}>Your personal information</legend>
-          <ControlledTextField
-            control={control}
-            id={'contacts-name'}
-            label={'Enter your name'}
-            name={'name'}
-            placeholder={'John'}
-          />
-          <ControlledTextField
-            control={control}
-            label={'Enter email'}
-            name={'email'}
-            placeholder={'john@gmail.com'}
-          />
-          <ControlledTextField
-            control={control}
-            label={'Enter phone number '}
-            name={'phone'}
-            placeholder={'7123456789'}
-          />
+          <div className={s.item}>
+            <ControlledTextField
+              control={control}
+              id={'contacts-name'}
+              label={'Enter your name'}
+              name={'name'}
+              placeholder={'John'}
+            />
+          </div>
+
+          <div className={s.item}>
+            <ControlledTextField
+              control={control}
+              id={'contacts-email'}
+              label={'Enter email'}
+              name={'email'}
+              placeholder={'john@gmail.com'}
+            />
+          </div>
+          <div className={s.item}>
+            <ControlledTextField
+              control={control}
+              id={'contacts-phone'}
+              label={'Enter phone number '}
+              name={'phone'}
+              placeholder={'7123456789'}
+            />
+          </div>
         </fieldset>
         <fieldset className={s.fields}>
           <legend className={'sr-only'}>Information about your aims</legend>
