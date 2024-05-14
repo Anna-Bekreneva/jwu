@@ -15,11 +15,14 @@ export default meta
 type Story = StoryObj<typeof meta>
 
 export const ReviewCardDefault: Story = {
+  args: {
+    name: 'Alexandr',
+    position: 'frontend-developer',
+    text: [
+      "Spotted your mobile billboard ad, and I can't help but applaud its eye-catching design! Incredibly creative with vibrant colors, it's truly memorable. I even took a&nbsp;photo and shared it with friends!",
+    ],
+  },
   render: args => {
-    const text = [
-      "Spotted your mobile billboard ad, and I can't help but applaud its eye-catching design! Incredibly creative with vibrant colors, it's truly memorable. I even took a photo and shared it with friends!",
-    ]
-
     return (
       <div
         style={{
@@ -33,10 +36,10 @@ export const ReviewCardDefault: Story = {
         <ReviewCard
           alt={'ava'}
           avif={'/assets/images/reviews/1.avif'}
-          name={args.name ?? 'Vitaliy Kusaev'}
-          position={args.position ?? 'Investigator'}
+          name={args.name}
+          position={args.position}
           src={'/assets/images/reviews/1.jpg'}
-          text={text}
+          text={args.text}
           webp={'/assets/images/reviews/1.webp'}
         />
       </div>

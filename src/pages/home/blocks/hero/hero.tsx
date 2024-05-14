@@ -1,30 +1,23 @@
-import { FC } from 'react'
-
 import { ButtonVariant, TypographyVariant } from '@/common'
-import {
-  Button,
-  Picture,
-  PicturePropsType,
-  ServiceCard,
-  ServiceCardProps,
-  Typography,
-} from '@/components'
+import { Button, Picture, ServiceCard, Typography } from '@/components'
 import { Autoplay } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
 
-import 'swiper/scss'
+import 'swiper/css'
 
 import s from './hero.module.scss'
 
-type CardType = {
-  type: 'card'
-} & ServiceCardProps
+// type CardType = {
+//   type: 'card'
+// } & ServiceCardProps
+//
+// type PictureType = {
+//   type: 'picture'
+// } & PicturePropsType
 
-type PictureType = {
-  type: 'picture'
-} & PicturePropsType
+// todo: edit types | const dataSwiper: CardType[] | PictureType[]
 
-const dataSwiper: CardType[] | PictureType[] = [
+const dataSwiper = [
   {
     icon: 'mobile-bilboards',
     title: 'Mobile Billboards',
@@ -82,7 +75,7 @@ const dataSwiper: CardType[] | PictureType[] = [
   },
 ]
 
-export const Hero: FC = () => {
+export const Hero = () => {
   return (
     <section className={`${s.hero} hero`}>
       <div className={'container container--large'}>
@@ -120,17 +113,17 @@ export const Hero: FC = () => {
                   {item.type === 'card' ? (
                     <ServiceCard
                       className={s.service}
-                      icon={item.icon}
-                      iconBg={item.iconBg}
-                      title={item.title}
+                      icon={item.icon ?? ''}
+                      iconBg={item.iconBg as 'orange' | 'purple' | undefined}
+                      title={item.title ?? ''}
                     />
                   ) : (
                     <div className={s.picture}>
                       <Picture
-                        alt={item.alt}
+                        alt={item.alt ?? ''}
                         avif={item.avif}
                         height={172}
-                        src={item.src}
+                        src={item.src ?? ''}
                         webp={item.webp}
                         width={300}
                       />

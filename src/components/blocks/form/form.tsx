@@ -30,7 +30,7 @@ type Props = {
 }
 
 export const Form = memo(({ className }: Props) => {
-  const { control, formState, handleSubmit } = useForm<ContactsFormSchemaType>({
+  const { control, handleSubmit } = useForm<ContactsFormSchemaType>({
     defaultValues: { aim: 'business' },
     resolver: zodResolver(ContactsFormSchema),
   })

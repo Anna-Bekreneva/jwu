@@ -1,6 +1,6 @@
 import sprite from '@/assets/icons/sprite.svg'
 import { ButtonVariant } from '@/common'
-import { Button, FacebookIcon } from '@/components'
+import { Button } from '@/components'
 import { Meta, StoryObj } from '@storybook/react'
 
 const meta = {
@@ -28,7 +28,11 @@ export const Primary: Story = {
 export const PrimaryWithIcon: Story = {
   args: {
     as: 'a',
-    children: <FacebookIcon fill={'white'} />,
+    children: (
+      <svg aria-hidden fill={'white'} viewBox={'0 0 24 24'} xmlns={'http://www.w3.org/2000/svg'}>
+        <use xlinkHref={`${sprite}#facebook`} />
+      </svg>
+    ),
     href: '#',
     isIcon: true,
     target: '_blank',
