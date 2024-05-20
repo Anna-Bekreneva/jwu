@@ -1,5 +1,5 @@
 import { ButtonVariant, TypographyVariant } from '@/common'
-import { Button, Picture, ServiceCard, Typography } from '@/components'
+import { Button, Picture, ServiceCard, ServiceCardProps, Typography } from '@/components'
 import { Autoplay } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
 
@@ -7,17 +7,19 @@ import 'swiper/css'
 
 import s from './hero.module.scss'
 
-// type CardType = {
-//   type: 'card'
-// } & ServiceCardProps
-//
-// type PictureType = {
-//   type: 'picture'
-// } & PicturePropsType
+type CardType = {
+  type: 'card'
+} & ServiceCardProps
+
+type PictureType = {
+  alt: string
+  basePath: string
+  type: 'picture'
+}
 
 // todo: edit types | const dataSwiper: CardType[] | PictureType[]
 
-const dataSwiper = [
+const dataSwiper: CardType[] | PictureType[] = [
   {
     icon: 'mobile-bilboards',
     title: 'Mobile Billboards',
@@ -25,10 +27,8 @@ const dataSwiper = [
   },
   {
     alt: 'Students',
-    avif: '/assets/images/gallery/students-university.avif',
-    src: '/assets/images/gallery/students-university.jpg',
+    basePath: '/assets/images/gallery/students-university',
     type: 'picture',
-    webp: '/assets/images/gallery/students-university.webp',
   },
   {
     icon: 'grand-openings',
@@ -38,10 +38,8 @@ const dataSwiper = [
   },
   {
     alt: 'Wedding',
-    avif: '/assets/images/gallery/wedding-confetti.avif',
-    src: '/assets/images/gallery/wedding-confetti.jpg',
+    basePath: '/assets/images/gallery/wedding-confetti',
     type: 'picture',
-    webp: '/assets/images/gallery/wedding-confetti.webp',
   },
   {
     icon: 'community',
@@ -50,10 +48,8 @@ const dataSwiper = [
   },
   {
     alt: 'Looking movie outdoors',
-    avif: '/assets/images/gallery/air-cinema.avif',
-    src: '/assets/images/gallery/air-cinema.jpg',
+    basePath: '/assets/images/gallery/air-cinema',
     type: 'picture',
-    webp: '/assets/images/gallery/air-cinema.webp',
   },
   {
     icon: 'parties',
@@ -63,10 +59,8 @@ const dataSwiper = [
   },
   {
     alt: 'Woman holding open sign',
-    avif: '/assets/images/gallery/woman-holding-open.avif',
-    src: '/assets/images/gallery/woman-holding-open.jpg',
+    basePath: '/assets/images/gallery/woman-holding-open',
     type: 'picture',
-    webp: '/assets/images/gallery/woman-holding-open.webp',
   },
   {
     icon: 'corporate',
@@ -121,10 +115,10 @@ export const Hero = () => {
                     <div className={s.picture}>
                       <Picture
                         alt={item.alt ?? ''}
-                        avif={item.avif}
+                        avif={`${item.basePath}.avif`}
                         height={172}
-                        src={item.src ?? ''}
-                        webp={item.webp}
+                        src={`${item.basePath}.src`}
+                        webp={`${item.basePath}.webp`}
                         width={300}
                       />
                     </div>
