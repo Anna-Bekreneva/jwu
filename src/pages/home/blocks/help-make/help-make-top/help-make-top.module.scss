@@ -1,0 +1,10 @@
+@import '../../../../../styles/mixins';
+
+.sectionTop {
+  margin-bottom: 60px;
+
+  /* stylelint-disable-next-line */
+  @include mq(xl) {
+    margin-bottom: 16px;
+  }
+}

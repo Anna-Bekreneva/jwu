@@ -1,0 +1,83 @@
+@import '../../../../../styles/mixins';
+
+.info {
+  @include flex-direction($align-items: flex-start, $justify-content: space-between);
+
+  gap: 24px;
+  width: 100%;
+
+  /* stylelint-disable-next-line */
+  @include mq(xl) {
+    flex-direction: column-reverse;
+  }
+
+  // todo: change it
+  @include mq(xl, min) {
+    flex-basis: 50%;
+  }
+}
+
+.items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-self: start;
+
+  width: 100%;
+
+  /* stylelint-disable-next-line */
+  @include mq(md) {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    gap: 16px;
+
+    width: calc(100% + 40px);
+    margin-top: -40px;
+    padding: 40px 40px 40px 0;
+  }
+}
+
+.item {
+  flex-basis: 192px;
+  flex-grow: 1;
+
+  &:first-child {
+    .serviceCard {
+      box-shadow: none;
+    }
+  }
+
+  /* stylelint-disable-next-line */
+  @include mq(md) {
+    flex-shrink: 0;
+    width: 220px;
+  }
+}
+
+.serviceCard {
+  padding: 20px 12px 16px;
+}
+
+.bottom {
+  flex-wrap: wrap;
+  width: 100%;
+  margin-top: auto;
+
+  /* stylelint-disable-next-line */
+  @include mq(xl) {
+    flex-direction: column;
+    gap: 16px;
+    align-items: center;
+    margin-top: 0;
+  }
+}
+
+.subtext {
+  @include mq(xl, min) {
+    flex: 1 1 232px;
+  }
+
+  @include mq(xl) {
+    text-align: center;
+  }
+}

@@ -1,5 +1,3 @@
-import { FC } from 'react'
-
 import { Footer, Header } from '@/components'
 import {
   Contacts,
@@ -13,7 +11,7 @@ import {
   Videos,
 } from '@/pages'
 
-export const HomePage: FC = () => {
+export const HomePage = () => {
   return (
     <div className={'wrapper'}>
       <Header />

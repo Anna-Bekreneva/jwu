@@ -1,11 +1,9 @@
-import { memo } from 'react'
-
 import { TypographyVariant } from '@/common'
 import { Form, Typography } from '@/components'
 
 import s from './contacts.module.scss'
 
-export const Contacts = memo(() => {
+export const Contacts = () => {
   return (
     <section className={'section'}>
       <div className={`container container--large`}>
@@ -27,4 +25,4 @@ export const Contacts = memo(() => {
       </div>
     </section>
   )
-})
+}

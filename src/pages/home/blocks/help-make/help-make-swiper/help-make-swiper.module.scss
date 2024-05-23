@@ -1,0 +1,23 @@
+@import '../../../../../styles/mixins';
+
+.swiper {
+  width: 100%;
+
+  /* stylelint-disable-next-line */
+  @include mq(xl, min) {
+    flex-basis: 50%;
+  }
+}
+
+.slider {
+  @include adaptive-value-base('height', 550, 240, 1);
+
+  box-shadow: none;
+}
+
+.picture {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 16px;
+}

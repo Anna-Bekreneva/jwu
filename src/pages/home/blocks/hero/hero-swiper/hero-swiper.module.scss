@@ -1,0 +1,46 @@
+@import '../../../../../styles/mixins';
+
+.swiper {
+  @include adaptive-value-base('margin-bottom', 110, 46, 1);
+
+  padding: 44px 0 !important;
+}
+
+.slide {
+  width: 320px !important;
+  height: auto !important;
+  border-radius: 20px;
+  box-shadow: var(--box-shadow);
+
+  /* stylelint-disable-next-line */
+  @include mq(md) {
+    width: 290px !important;
+  }
+}
+
+.small {
+  width: 192px !important;
+}
+
+.service {
+  padding: 20px;
+}
+
+.picture {
+  height: 192px;
+  padding: 10px;
+  background-color: var(--color-white);
+  border-radius: 20px;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+
+  /* stylelint-disable-next-line */
+  @include mq(md) {
+    height: 174px;
+  }
+}

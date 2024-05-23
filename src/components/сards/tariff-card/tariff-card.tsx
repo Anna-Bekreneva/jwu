@@ -24,7 +24,7 @@ export type TariffType = {
   title: string
   type?: 'exclusive' | 'standard'
 }
-export const TariffCard: FC<TariffType> = ({
+export const TariffCard = ({
   additionalText,
   fancyboxName,
   gallery,
@@ -33,7 +33,7 @@ export const TariffCard: FC<TariffType> = ({
   text,
   title,
   type = 'standard',
-}) => {
+}: TariffType) => {
   const cardClassName = `${s.card} ${s[String(type)]}`
 
   useEffect(() => {
