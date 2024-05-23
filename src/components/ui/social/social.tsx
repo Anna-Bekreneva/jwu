@@ -1,5 +1,3 @@
-import { FC } from 'react'
-
 import sprite from '@/assets/icons/sprite.svg'
 import { Button, ButtonPropsType } from '@/components'
 
@@ -14,7 +12,7 @@ type Props = {
 
 export type SocialPropsType = Props & Omit<ButtonPropsType<'a'>, keyof Props>
 
-export const Social: FC<SocialPropsType> = ({ className, fill, idIcon, stroke, ...rest }) => {
+export const Social = ({ className, fill, idIcon, stroke, ...rest }: SocialPropsType) => {
   return (
     <Button as={'a'} className={`${s.icon} ${className}`} isIcon {...rest}>
       <svg

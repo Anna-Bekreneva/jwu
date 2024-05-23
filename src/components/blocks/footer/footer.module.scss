@@ -26,28 +26,6 @@
   }
 }
 
-.socials {
-  display: flex;
-  gap: 8px;
-  align-items: center;
-}
-
-.link {
-  svg {
-    width: 24px;
-    height: 24px;
-    fill: none;
-    stroke: var(--color-magenta-500);
-  }
-}
-
-.whatsapp {
-  svg {
-    fill: var(--color-magenta-500);
-    stroke: none;
-  }
-}
-
 .copyright {
   color: var(--color-purple-250);
   text-align: center;

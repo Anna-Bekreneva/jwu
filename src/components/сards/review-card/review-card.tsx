@@ -21,6 +21,7 @@ export const ReviewCard: FC<ReviewCardPropsType> = ({
   ...rest
 }) => {
   console.log(position)
+
   return (
     <article className={`${s.card} ${className}`}>
       <div className={s.text}>
@@ -29,7 +30,7 @@ export const ReviewCard: FC<ReviewCardPropsType> = ({
         ))}
       </div>
       <div className={s.author}>
-        {src && <Picture alt={alt} src={src} loading={"lazy"} {...rest} className={s.ava} />}
+        {src && <Picture alt={alt} loading={'lazy'} src={src} {...rest} className={s.ava} />}
         <Typography className={s.name} variant={TypographyVariant.body2}>
           {name}{' '}
         </Typography>

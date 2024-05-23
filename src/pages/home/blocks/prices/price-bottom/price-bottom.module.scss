@@ -1,0 +1,31 @@
+@import '../../../../../styles/mixins';
+
+.sectionBottom {
+  align-items: flex-start;
+
+  /* stylelint-disable-next-line */
+  @include mq(md) {
+    align-items: center;
+  }
+}
+
+.sectionBottomText {
+  @include mq(md) {
+    text-align: center;
+  }
+}
+
+.sectionButtons {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+
+  /* stylelint-disable-next-line */
+  @include mq(sm) {
+    flex-direction: row;
+  }
+}
+
+.sectionButton {
+  flex-shrink: 0;
+}

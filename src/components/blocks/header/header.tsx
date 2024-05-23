@@ -1,12 +1,8 @@
-import { FC } from 'react'
-
-import sprite from '@/assets/icons/sprite.svg'
-import { ButtonVariant } from '@/common'
-import { Button, Logo, Menu, useHeader } from '@/components'
+import { ConnectButtons, Logo, Menu, useHeader } from '@/components'
 
 import s from './header.module.scss'
 
-export const Header: FC = () => {
+export const Header = () => {
   const { burgerButtonRef, isOpenMenu, menuWrapperRef, setIsOpenMenu } = useHeader()
 
   return (
@@ -37,37 +33,7 @@ export const Header: FC = () => {
               role={'menu'}
             >
               <Menu className={s.menu} />
-              <div className={s.contacts}>
-                <Button
-                  as={'a'}
-                  className={s.button}
-                  href={'#contacts'}
-                  variant={ButtonVariant.secondary}
-                >
-                  Contact us
-                </Button>
-                <Button aria-label={'whatsapp'} as={'a'} href={'#'} isIcon>
-                  <svg
-                    aria-hidden
-                    className={`${s.icon} ${s.iconWhatsapp}`}
-                    viewBox={'0 0 24 24'}
-                    xmlns={'http://www.w3.org/2000/svg'}
-                  >
-                    <use xlinkHref={`${sprite}#whatsapp`} />
-                  </svg>
-                </Button>
-                <Button aria-label={'email'} as={'a'} href={'#'} isIcon>
-                  <svg
-                    aria-hidden
-                    className={`${s.icon} ${s.iconEmail}`}
-                    fill={'white'}
-                    viewBox={'0 0 24 24'}
-                    xmlns={'http://www.w3.org/2000/svg'}
-                  >
-                    <use xlinkHref={`${sprite}#email`} />
-                  </svg>
-                </Button>
-              </div>
+              <ConnectButtons />
             </div>
           </nav>
         </div>

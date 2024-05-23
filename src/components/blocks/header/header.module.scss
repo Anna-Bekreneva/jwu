@@ -150,34 +150,8 @@
   @include mq(lg) {
     flex-direction: column;
   }
-}
 
-.contacts {
-  @include flex-normal;
-
-  flex-wrap: wrap;
-  gap: 8px;
-}
-
-.contacts,
-.button,
-.menu {
-  /* stylelint-disable-next-line */
   @include mq(sm) {
     width: 100%;
   }
-}
-
-.icon {
-  width: 24px;
-  height: 24px;
-}
-
-.iconWhatsapp {
-  fill: var(--color-white);
-}
-
-.iconEmail {
-  fill: none;
-  stroke: var(--color-white);
 }
