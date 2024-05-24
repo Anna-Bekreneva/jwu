@@ -1,5 +1,3 @@
-import { memo } from 'react'
-
 import { TypographyVariant } from '@/common'
 import { Typography } from '@/components'
 
@@ -11,15 +9,18 @@ export type StatisticCardPropsType = {
   numbers: string
   text: string
 }
-export const StatisticCard = memo(
-  ({ bgColor = '#ffffff', className, numbers, text }: StatisticCardPropsType) => {
-    return (
-      <article className={`${s.card} ${className}`} style={{ backgroundColor: bgColor }}>
-        <Typography as={'h3'} className={s.title} variant={TypographyVariant.title1}>
-          {numbers}
-        </Typography>
-        <Typography className={s.text}>{text}</Typography>
-      </article>
-    )
-  }
-)
+export const StatisticCard = ({
+  bgColor = '#ffffff',
+  className,
+  numbers,
+  text,
+}: StatisticCardPropsType) => {
+  return (
+    <article className={`${s.card} ${className}`} style={{ backgroundColor: bgColor }}>
+      <Typography as={'h3'} className={s.title} variant={TypographyVariant.title1}>
+        {numbers}
+      </Typography>
+      <Typography className={s.text}>{text}</Typography>
+    </article>
+  )
+}

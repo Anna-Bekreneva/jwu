@@ -1,23 +1,15 @@
-import { FC, useEffect, useState } from 'react'
-import { Tooltip } from 'react-tooltip'
+import { useEffect } from 'react'
 
 import { TypographyVariant } from '@/common'
-import { Picture, Typography } from '@/components'
+import { GallerySwiper, GalleryType, PriceItem, PriceType, Typography } from '@/components'
 import { Fancybox as NativeFancybox } from '@fancyapps/ui'
-import { Swiper, SwiperSlide } from 'swiper/react'
-
-import '@fancyapps/ui/dist/fancybox/fancybox.css'
-import 'react-tooltip/dist/react-tooltip.css'
-import 'swiper/scss'
 
 import s from './tariff-card.module.scss'
-
-type PriceType = { hint?: string; id: string; name: string; value: string }
 
 export type TariffType = {
   additionalText?: string
   fancyboxName?: string
-  gallery?: Array<{ alt: string; basePath: string; fancyboxHref?: string }>
+  gallery?: GalleryType[]
   items?: PriceType[]
   pay: string
   text: string
@@ -57,36 +49,7 @@ export const TariffCard = ({
         <Typography className={s.text} variant={TypographyVariant.body2}>
           {text}
         </Typography>
-        {gallery && (
-          <div className={s.galleryWrapper}>
-            <Swiper
-              className={s.gallery}
-              slidesPerGroup={1}
-              slidesPerView={'auto'}
-              spaceBetween={8}
-            >
-              {gallery.map((item, index) => (
-                <SwiperSlide className={s.galleryItem} key={index}>
-                  <a
-                    data-fancybox={fancyboxName}
-                    href={item.fancyboxHref ?? `${item.basePath}.jpg`}
-                  >
-                    <Picture
-                      alt={item.alt}
-                      avif={`${item.basePath}.avif`}
-                      className={s.galleryPicture}
-                      height={75}
-                      loading={'lazy'}
-                      src={`${item.basePath}.jpg`}
-                      webp={`${item.basePath}.webp`}
-                      width={132}
-                    />
-                  </a>
-                </SwiperSlide>
-              ))}
-            </Swiper>
-          </div>
-        )}
+        {gallery && <GallerySwiper fancyboxName={fancyboxName} gallery={gallery} />}
         {additionalText && (
           <Typography className={s.text} variant={TypographyVariant.body2}>
             {additionalText}
@@ -98,7 +61,7 @@ export const TariffCard = ({
           <ul className={s.priceItems}>
             {items.map(item => (
               <li className={s.priceItem} key={item.id}>
-                <ItemPrice hint={item.hint} id={item.id} name={item.name} value={item.value} />
+                <PriceItem hint={item.hint} id={item.id} name={item.name} value={item.value} />
               </li>
             ))}
           </ul>
@@ -108,51 +71,5 @@ export const TariffCard = ({
         </Typography>
       </div>
     </article>
-  )
-}
-
-const ItemPrice: FC<PriceType> = ({ hint, id, name, value }) => {
-  const [isShowHint, setIsShowHint] = useState(false)
-
-  return (
-    <div className={s.price}>
-      <Typography as={'span'} variant={TypographyVariant.body2}>
-        {name}
-      </Typography>
-      <div className={s.value}>
-        <Typography as={'span'} variant={TypographyVariant.strong2}>
-          {value}
-        </Typography>
-        {hint && (
-          <button
-            aria-controls={id}
-            aria-expanded={isShowHint}
-            aria-label={isShowHint ? 'close hint' : 'open hint'}
-            className={s.showHint}
-            data-event={'click'}
-            data-tip={'custom show'}
-            data-tooltip-id={id}
-            data-tooltip-place={'top-end'}
-            onClick={() => setIsShowHint(!isShowHint)}
-            type={'button'}
-          />
-        )}
-      </div>
-      {hint && (
-        <Tooltip
-          aria-desc
-          aria-labelledby={id}
-          className={s.hint}
-          classNameArrow={s.arrow}
-          id={id}
-          isOpen={isShowHint}
-          opacity={1}
-          openOnClick
-          setIsOpen={() => setIsShowHint(!isShowHint)}
-        >
-          <Typography variant={TypographyVariant.caption1}>{hint}</Typography>
-        </Tooltip>
-      )}
-    </div>
   )
 }

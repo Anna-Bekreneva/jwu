@@ -1,4 +1,4 @@
-import { ReactNode, memo } from 'react'
+import { ReactNode } from 'react'
 
 import { TypographyVariant } from '@/common'
 import { Typography } from '@/components'
@@ -13,26 +13,29 @@ export type CustomRadioGroupProps = RadioGroupProps & {
   errorMessage?: string
 }
 
-export const RadioGroup = memo(
-  ({ children, className, errorMessage, ...props }: CustomRadioGroupProps) => {
-    return (
-      <RadixRadioGroup.Root className={`${s.root} ${className}`} {...props}>
-        {children}
-        {errorMessage && (
-          <Typography className={s.errorMessage} variant={TypographyVariant.caption2}>
-            {errorMessage}
-          </Typography>
-        )}
-      </RadixRadioGroup.Root>
-    )
-  }
-)
+export const RadioGroup = ({
+  children,
+  className,
+  errorMessage,
+  ...props
+}: CustomRadioGroupProps) => {
+  return (
+    <RadixRadioGroup.Root className={`${s.root} ${className}`} {...props}>
+      {children}
+      {errorMessage && (
+        <Typography className={s.errorMessage} variant={TypographyVariant.caption2}>
+          {errorMessage}
+        </Typography>
+      )}
+    </RadixRadioGroup.Root>
+  )
+}
 
 type RadioItemProps = {
   label: string
 } & Omit<RadioGroupItemProps, 'id'>
 
-export const RadioItem = memo(({ disabled, label, value, ...props }: RadioItemProps) => {
+export const RadioItem = ({ disabled, label, value, ...props }: RadioItemProps) => {
   const innerClassName = `${s.inner} ${disabled ? s.disabled : ''}`
 
   return (
@@ -48,4 +51,4 @@ export const RadioItem = memo(({ disabled, label, value, ...props }: RadioItemPr
       </Typography>
     </div>
   )
-})
+}

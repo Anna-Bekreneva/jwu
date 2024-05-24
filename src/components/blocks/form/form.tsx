@@ -1,4 +1,3 @@
-import { memo } from 'react'
 import { useForm } from 'react-hook-form'
 
 import { TypographyVariant } from '@/common'
@@ -29,7 +28,7 @@ type Props = {
   className?: string
 }
 
-export const Form = memo(({ className }: Props) => {
+export const Form = ({ className }: Props) => {
   const { control, handleSubmit } = useForm<ContactsFormSchemaType>({
     defaultValues: { aim: 'business' },
     resolver: zodResolver(ContactsFormSchema),
@@ -111,4 +110,4 @@ export const Form = memo(({ className }: Props) => {
       <Button type={'submit'}>Submit</Button>
     </form>
   )
-})
+}

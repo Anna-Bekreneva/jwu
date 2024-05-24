@@ -1,4 +1,4 @@
-import { ComponentPropsWithoutRef, FC } from 'react'
+import { ComponentPropsWithoutRef } from 'react'
 
 import { TypographyVariant } from '@/common'
 import { Typography } from '@/components'
@@ -7,7 +7,7 @@ import { TabsContentProps, TabsListProps, TabsProps } from '@radix-ui/react-tabs
 
 import s from './tabs.module.scss'
 
-export const Tabs: FC<TabsProps> = ({ onValueChange, value, ...props }) => {
+export const Tabs = ({ onValueChange, value, ...props }: TabsProps) => {
   return (
     <TabsRadix.Root
       className={s.root}
@@ -20,14 +20,14 @@ export const Tabs: FC<TabsProps> = ({ onValueChange, value, ...props }) => {
   )
 }
 
-export const TabsList: FC<TabsListProps> = ({ className, ...props }) => {
+export const TabsList = ({ className, ...props }: TabsListProps) => {
   return <TabsRadix.List className={`${s.list} ${className}`} {...props} />
 }
 
 type TabsTriggerPropsType = {
   value: string
 } & ComponentPropsWithoutRef<'button'>
-export const TabsTrigger: FC<TabsTriggerPropsType> = ({ value, ...props }) => {
+export const TabsTrigger = ({ value, ...props }: TabsTriggerPropsType) => {
   return (
     <TabsRadix.Trigger asChild className={s.button} value={value}>
       <Typography
@@ -42,6 +42,6 @@ export const TabsTrigger: FC<TabsTriggerPropsType> = ({ value, ...props }) => {
   )
 }
 
-export const TabsContent: FC<TabsContentProps> = ({ className, value, ...props }) => {
+export const TabsContent = ({ className, value, ...props }: TabsContentProps) => {
   return <TabsRadix.Content className={`${s.content} ${className}`} value={value} {...props} />
 }

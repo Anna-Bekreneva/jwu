@@ -1,0 +1,63 @@
+@import '../../../../styles/mixins';
+
+.price {
+  @include flex-normal($justify-content: space-between);
+
+  position: relative;
+  padding: 10px 16px;
+  background-color: var(--color-purple-120);
+  border-radius: 10px;
+}
+
+.value {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+
+  span {
+    @include adaptive-value-base('font-size', 20, 18, 1);
+  }
+}
+
+.showHint {
+  @include bg;
+
+  width: 16px;
+  height: 16px;
+  background-image: url('../../../../assets/icons/question.svg');
+  filter: invert(59%) sepia(14%) saturate(951%) hue-rotate(232deg) brightness(95%) contrast(83%);
+
+  &::before {
+    content: '';
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.hint {
+  z-index: 2;
+  transform: translateX(10%);
+
+  width: 210px !important;
+  padding: 8px 12px;
+
+  text-align: center;
+
+  background-color: var(--color-purple-400) !important;
+  border-radius: 8px !important;
+
+  * {
+    color: var(--color-white);
+  }
+}
+
+.arrow {
+  right: 26px;
+  left: unset !important;
+}
