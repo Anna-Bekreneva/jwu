@@ -1,4 +1,4 @@
-import { ComponentPropsWithoutRef, FC } from 'react'
+import { ComponentPropsWithoutRef } from 'react'
 
 import { TypographyVariant } from '@/common'
 import { Typography } from '@/components'
@@ -12,13 +12,13 @@ export type ServiceCardProps = {
   title: string
 } & ComponentPropsWithoutRef<'article'>
 
-export const ServiceCard: FC<ServiceCardProps> = ({
+export const ServiceCard = ({
   className,
   icon,
   iconBg = 'purple',
   text,
   title,
-}) => {
+}: ServiceCardProps) => {
   const cardClassName = `${s.card} ${text && s.detail} ${className}`
 
   return (

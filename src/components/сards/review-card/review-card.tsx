@@ -1,5 +1,3 @@
-import { FC } from 'react'
-
 import { TypographyVariant } from '@/common'
 import { Picture, PicturePropsType, Typography } from '@/components'
 
@@ -11,7 +9,7 @@ export type ReviewCardPropsType = {
   position?: string
   text: string[]
 } & Partial<Omit<PicturePropsType, 'className'>>
-export const ReviewCard: FC<ReviewCardPropsType> = ({
+export const ReviewCard = ({
   alt = 'ava',
   className,
   name,
@@ -19,9 +17,7 @@ export const ReviewCard: FC<ReviewCardPropsType> = ({
   src,
   text,
   ...rest
-}) => {
-  console.log(position)
-
+}: ReviewCardPropsType) => {
   return (
     <article className={`${s.card} ${className}`}>
       <div className={s.text}>

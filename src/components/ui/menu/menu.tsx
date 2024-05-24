@@ -1,5 +1,3 @@
-import { FC } from 'react'
-
 import { TypographyVariant } from '@/common'
 import { Typography } from '@/components'
 
@@ -19,7 +17,7 @@ type MenuProps = {
   className?: string
 }
 
-export const Menu: FC<MenuProps> = ({ className }) => {
+export const Menu = ({ className }: MenuProps) => {
   return (
     <ul className={`${s.menu} ${className}`}>
       {menuData.map((item, index) => (
@@ -35,7 +33,7 @@ type MenuItemProps = {
   text: string
 }
 
-const MenuItem: FC<MenuItemProps> = ({ href, icon, text }) => {
+const MenuItem = ({ href, icon, text }: MenuItemProps) => {
   return (
     <li className={s.item}>
       <Typography
