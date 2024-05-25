@@ -16,7 +16,7 @@ const meta = {
 export default meta
 type Story = StoryObj<typeof meta>
 
-export const AccodrionDefault: Story = {
+export const AccordionDefault: Story = {
   args: {
     type: 'single',
   },

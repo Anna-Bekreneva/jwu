@@ -31,6 +31,7 @@ export const ReviewCardDefault: Story = {
           maxWidth: '600px',
           padding: '50px',
           width: '100%',
+          margin: '0 auto'
         }}
       >
         <ReviewCard
