@@ -98,6 +98,7 @@ export const tariffData: TariffType[] = [
     type: 'standard',
   },
   {
+    fancyboxName: 'Exclusive-Event',
     additionalText:
       'Event rental is available for a minimum of two hours, while other terms are discussed individually',
     gallery: [
@@ -152,6 +153,7 @@ export const tariffData: TariffType[] = [
     type: 'exclusive',
   },
   {
+    fancyboxName: 'Exclusive-Business',
     gallery: [
       {
         alt: '1',
