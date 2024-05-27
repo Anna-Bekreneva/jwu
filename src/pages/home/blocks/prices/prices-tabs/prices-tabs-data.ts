@@ -98,9 +98,9 @@ export const tariffData: TariffType[] = [
     type: 'standard',
   },
   {
-    fancyboxName: 'Exclusive-Event',
     additionalText:
       'Event rental is available for a minimum of two hours, while other terms are discussed individually',
+    fancyboxName: 'Exclusive-Event',
     gallery: [
       {
         alt: '1',

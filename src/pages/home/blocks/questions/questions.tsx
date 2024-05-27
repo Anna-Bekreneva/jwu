@@ -9,7 +9,7 @@ export const Questions = () => {
   const rightItems = [...questions].splice(leftCount)
 
   return (
-    <section className={`section section--bg`}>
+    <section className={`section section--bg`} id={'faq'}>
       <div className={'container'}>
         <div className={'section__wrapper'}>
           <QuestionsTop />

@@ -4,7 +4,7 @@ import s from './prices.module.scss'
 
 export const Prices = () => {
   return (
-    <section className={`${s.section} section`}>
+    <section className={`${s.section} section`} id={'pricing'}>
       <div className={'container'}>
         <div className={'section__wrapper'}>
           <div className={s.wrapper}>

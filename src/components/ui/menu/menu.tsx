@@ -1,16 +1,15 @@
-import { TypographyVariant } from '@/common'
-import { Typography } from '@/components'
+import { Link } from 'react-scroll'
 
 import s from './menu.module.scss'
 
 import sprite from '../../../assets/icons/sprite.svg'
 
 const menuData: MenuItemProps[] = [
-  { href: '#services', text: 'Our Services' },
-  { href: '#testimonials', text: 'Testimonials' },
-  { href: '#pricing', text: 'Pricing' },
-  { href: '#faq', text: 'FAQ' },
-  { href: 'tel:+7327886611', icon: 'phone', text: '7327886611' },
+  { text: 'Our Services', to: 'services' },
+  { text: 'Testimonials', to: 'testimonials' },
+  { text: 'Pricing', to: 'pricing' },
+  { text: 'FAQ', to: 'faq' },
+  { href: 'tel:+7327886611', icon: 'phone', text: '7327886611', to: '' },
 ]
 
 type MenuProps = {
@@ -21,26 +20,28 @@ export const Menu = ({ className }: MenuProps) => {
   return (
     <ul className={`${s.menu} ${className}`}>
       {menuData.map((item, index) => (
-        <MenuItem href={item.href} icon={item.icon} key={index} text={item.text} />
+        <MenuItem href={item.href} icon={item.icon} key={index} text={item.text} to={item.to} />
       ))}
     </ul>
   )
 }
 
 type MenuItemProps = {
-  href: string
+  href?: string
   icon?: string
   text: string
+  to: string
 }
 
-const MenuItem = ({ href, icon, text }: MenuItemProps) => {
+const MenuItem = ({ href = '#', icon, text, to }: MenuItemProps) => {
   return (
     <li className={s.item}>
-      <Typography
-        as={'a'}
+      <Link
         className={`${s.link} ${icon && s.linkWithIcon}`}
         href={href}
-        variant={TypographyVariant.strong2}
+        role={'menuitem'}
+        smooth
+        to={to}
       >
         {icon && (
           <svg
@@ -53,7 +54,7 @@ const MenuItem = ({ href, icon, text }: MenuItemProps) => {
           </svg>
         )}
         {text}
-      </Typography>
+      </Link>
     </li>
   )
 }
