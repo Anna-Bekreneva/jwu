@@ -4,7 +4,7 @@ import s from './reviews.module.scss'
 
 export const Reviews = () => {
   return (
-    <section className={`section section--bg`}>
+    <section className={`section section--bg`} id={'testimonials'}>
       <div className={'container'}>
         <div className={'section__wrapper'}>
           <ReviewsTop />

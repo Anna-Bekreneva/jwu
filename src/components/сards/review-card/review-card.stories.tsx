@@ -28,10 +28,10 @@ export const ReviewCardDefault: Story = {
         style={{
           backgroundColor: 'white',
           borderRadius: '20px',
+          margin: '0 auto',
           maxWidth: '600px',
           padding: '50px',
           width: '100%',
-          margin: '0 auto'
         }}
       >
         <ReviewCard

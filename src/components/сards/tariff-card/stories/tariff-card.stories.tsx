@@ -1,7 +1,7 @@
 import { TariffCard } from '@/components'
+import { exclusiveTariffData } from '@/components/сards/tariff-card/stories/exclusive-tariff-data'
+import { standardTariffData } from '@/components/сards/tariff-card/stories/standard-tariff-data'
 import { Meta, StoryObj } from '@storybook/react'
-import {exclusiveTariffData} from "@/components/сards/tariff-card/stories/exclusive-tariff-data";
-import {standardTariffData} from "@/components/сards/tariff-card/stories/standard-tariff-data";
 
 const meta = {
   argTypes: {},
@@ -14,7 +14,7 @@ export default meta
 type Story = StoryObj<typeof meta>
 
 export const StandardTariffCard: Story = {
-  args: standardTariffData
+  args: standardTariffData,
 }
 
 export const ExclusiveTariffCard: Story = {
