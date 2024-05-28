@@ -1,0 +1,8 @@
+@mixin link-focus {
+  border-radius: 4px;
+  outline: 0;
+
+  &:focus-visible {
+    box-shadow: var(--shadow-focus);
+  }
+}
