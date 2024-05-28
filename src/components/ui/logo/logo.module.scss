@@ -1,8 +1,25 @@
+@import '../../../styles/mixins';
+
 .logo {
+  @include link-focus;
+
   display: inline-block;
+
   width: 100%;
   max-width: 84px;
   height: 42px;
+
+  transition: box-shadow 0.3s, opacity 0.3s;
+
+  &:active {
+    opacity: 0.5;
+  }
+
+  @media (any-hover: hover) {
+    &:hover {
+      opacity: 0.7;
+    }
+  }
 }
 
 .img {
