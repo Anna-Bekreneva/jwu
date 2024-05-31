@@ -9,7 +9,9 @@
   max-width: 84px;
   height: 42px;
 
-  transition: box-shadow 0.3s, opacity 0.3s;
+  transition:
+    box-shadow 0.3s,
+    opacity 0.3s;
 
   &:active {
     opacity: 0.5;
