@@ -9,16 +9,30 @@
   }
 }
 
-.swiper-pagination-bullet {
-  width: 12px;
-  height: 12px;
+.swiper-pagination-clickable .swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
 
   opacity: 1;
-  background-color: var(--color-purple-100);
+  background-color: var(--color-purple-300);
 
-  transition: background-color 0.3s;
+  transition: background-color 0.3s, opacity 0.3s;
+
+  &:focus-visible {
+
+  }
+
+  &:active {
+    opacity: 0.6;
+  }
+
+  @media (any-hover: hover) {
+    &:hover {
+      background-color: var(--color-orange-400);
+    }
+  }
 }
 
 .swiper-pagination-bullet-active {
-  background-color: var(--color-purple-300);
+  background-color: var(--color-purple-400) !important;
 }
