@@ -16,13 +16,16 @@
   color: var(--color-purple-900);
   font-family: 'Poppins', sans-serif;
   position: relative;
-  transition: box-shadow 0.3s, opacity 0.3s, color 0.3s;
+  transition:
+    box-shadow 0.3s,
+    opacity 0.3s,
+    color 0.3s;
   @include link-focus;
 
   @media (any-hover: hover) {
     &::before {
       position: absolute;
-      content: "";
+      content: '';
       left: -10px;
       bottom: -34px;
       background-color: transparent;
