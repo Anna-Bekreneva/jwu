@@ -23,7 +23,7 @@
 
   transition:
     color 0.3s,
-    border-color 0.3s;
+    border-color 0.3s, background-color 0.3s;
 
   &::after {
     content: '';
@@ -41,7 +41,8 @@
   }
 
   &:focus-visible {
-    border-color: var(--color-purple-400);
+    background-color: transparent;
+    border-color: var(--color-orange-400);
     outline: 0;
   }
 
@@ -57,6 +58,14 @@
     width: 100%;
     background-color: var(--color-magenta-500);
     transition: transform 0.4s;
+  }
+
+  &:focus-visible {
+    color: var(--color-magenta-500);
+
+    &::after {
+      background-color: transparent;
+    }
   }
 
   @media (any-hover: hover) {
@@ -95,4 +104,8 @@
   height: 40px;
   padding: 8px;
   border-radius: 50%;
+
+  &:focus-visible {
+      color: var(--color-magenta-500);
+  }
 }
