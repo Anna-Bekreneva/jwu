@@ -16,10 +16,11 @@
   opacity: 1;
   background-color: var(--color-purple-300);
 
-  transition: background-color 0.3s, opacity 0.3s;
+  transition:
+    background-color 0.3s,
+    opacity 0.3s;
 
   &:focus-visible {
-
   }
 
   &:active {

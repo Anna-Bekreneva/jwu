@@ -23,7 +23,8 @@
 
   transition:
     color 0.3s,
-    border-color 0.3s, background-color 0.3s;
+    border-color 0.3s,
+    background-color 0.3s;
 
   &::after {
     content: '';
@@ -106,6 +107,6 @@
   border-radius: 50%;
 
   &:focus-visible {
-      color: var(--color-magenta-500);
+    color: var(--color-magenta-500);
   }
 }
