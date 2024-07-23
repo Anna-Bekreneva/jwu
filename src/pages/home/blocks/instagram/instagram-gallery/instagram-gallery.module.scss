@@ -1,11 +1,10 @@
 .items {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 20px;
 }
 
 .item {
-  flex: 1 1 319px;
   aspect-ratio: 1 / 0.8;
   padding: 12px;
   border-radius: 14px;
