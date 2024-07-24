@@ -1,6 +1,14 @@
 .icon {
+  transition: color 0.3s;
+
   svg {
     width: 24px;
     height: 24px;
+  }
+
+  @media (any-hover: hover) {
+    &:hover {
+      color: var(--color-white);
+    }
   }
 }
