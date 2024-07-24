@@ -48,7 +48,7 @@ type AccordionContentPropsType = {
 export const AccordionContent = ({ children, className, ...rest }: AccordionContentPropsType) => {
   return (
     <AccordionRadix.Content className={`${s.content} ${className}`} {...rest}>
-      {children}
+      <div className={s.box}>{children}</div>
     </AccordionRadix.Content>
   )
 }

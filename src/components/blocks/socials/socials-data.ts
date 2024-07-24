@@ -13,6 +13,7 @@ export const dataSocials: SocialPropsType[] = [
     'aria-label': 'email',
     href: '#',
     idIcon: 'email',
+    stroke: 'white',
   },
   {
     'aria-label': 'instagram',
