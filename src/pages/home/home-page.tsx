@@ -1,4 +1,4 @@
-import { Footer, Header } from '@/components'
+import { CustomHead, Footer, Header } from '@/components'
 import {
   Contacts,
   HelpMake,
@@ -14,6 +14,10 @@ import {
 export const HomePage = () => {
   return (
     <div className={'wrapper'}>
+      <CustomHead
+        description={'We offer mobile billboards in NY for your business and events'}
+        title={'Home page | JWU'}
+      />
       <Header />
       <main>
         <Hero />
