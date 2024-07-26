@@ -2,19 +2,13 @@ import { ComponentPropsWithoutRef } from 'react'
 
 import { TypographyVariant } from '@/common'
 import { Typography } from '@/components'
+import { ServiceData } from '@/pages'
 
 import s from './service-card.module.scss'
-import {ServiceData} from "@/pages";
 
 export type Props = ServiceData & ComponentPropsWithoutRef<'article'>
 
-export const ServiceCard = ({
-  className,
-  icon,
-  iconBg = 'purple',
-  text,
-  title,
-}: Props) => {
+export const ServiceCard = ({ className, icon, iconBg = 'purple', text, title }: Props) => {
   const cardClassName = `${s.card} ${text && s.detail} ${className}`
 
   return (

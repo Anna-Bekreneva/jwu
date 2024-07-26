@@ -1,6 +1,8 @@
-import {ServiceCard, Typography, SectionNavigation} from '@/components'
+import { SectionNavigation, ServiceCard, Typography } from '@/components'
+
 import s from './help-make-services.module.scss'
-import {dataServices} from "./data";
+
+import { dataServices } from './data'
 
 export const HelpMakeServices = () => {
   return (
@@ -22,7 +24,7 @@ export const HelpMakeServices = () => {
         <Typography className={s.subtext}>
           We will be happy to help make any&nbsp;of&nbsp;your&nbsp;events memorable
         </Typography>
-        <SectionNavigation/>
+        <SectionNavigation />
       </div>
     </div>
   )

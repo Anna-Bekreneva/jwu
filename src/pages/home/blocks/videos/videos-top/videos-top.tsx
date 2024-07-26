@@ -1,5 +1,5 @@
-import {TypographyVariant } from '@/common'
-import {SectionNavigation, Typography} from '@/components'
+import { TypographyVariant } from '@/common'
+import { SectionNavigation, Typography } from '@/components'
 
 export const VideosTop = () => {
   return (
@@ -11,7 +11,7 @@ export const VideosTop = () => {
         Our Mobile LED Billboards are equipped with rising screens and&nbsp;can play
         video&nbsp;and&nbsp;sound!
       </Typography>
-      <SectionNavigation/>
+      <SectionNavigation />
     </div>
   )
 }

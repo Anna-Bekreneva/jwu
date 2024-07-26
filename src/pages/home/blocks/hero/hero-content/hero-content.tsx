@@ -1,4 +1,4 @@
-import {SectionNavigation, Typography} from '@/components'
+import { SectionNavigation, Typography } from '@/components'
 
 import s from './hero-content.module.scss'
 
@@ -10,7 +10,7 @@ export const HeroContent = () => {
           “We help people make their events unforgettable and&nbsp;businesses achieve their goals” —{' '}
           <b>JWU&nbsp;Media</b>
         </Typography>
-        <SectionNavigation/>
+        <SectionNavigation />
       </div>
     </div>
   )
