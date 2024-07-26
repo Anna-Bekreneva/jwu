@@ -1,10 +1,11 @@
-import { useState } from 'react'
+import {useState} from 'react'
 
-import { TypographyVariant } from '@/common'
-import { Tabs, TabsContent, TabsList, TabsTrigger, TariffCard, Typography } from '@/components'
-import { tariffData } from '@/pages'
+import {TypographyVariant} from '@/common'
+import {Tabs, TabsContent, TabsList, TabsTrigger, TariffCard, Typography} from '@/components'
+import {tariffData} from '@/pages'
 
 import s from './prices-tabs.module.scss'
+import {motion} from "framer-motion"
 
 const TabsVariant = {
   exclusive: 'exclusive',
@@ -12,6 +13,17 @@ const TabsVariant = {
 } as const
 
 type TabsValueType = (typeof TabsVariant)[keyof typeof TabsVariant]
+
+const cardsVariants = {
+  visible: (i: number) => ({
+    opacity: 1,
+    transform: 'translateY(0)',
+    transition: {
+      delay: i * 0.16
+    },
+  }),
+  hidden: {opacity: 0, transform: 'translateY(12px)', }
+}
 export const PricesTabs = () => {
   const [value, setValue] = useState<TabsValueType>(TabsVariant.exclusive)
 
@@ -45,9 +57,18 @@ export const PricesTabs = () => {
             .filter(tariff => tariff.type === 'standard')
             .map((tariff, index) => {
               return (
-                <li className={s.item} key={index}>
-                  <TariffCard {...tariff} />
-                </li>
+                  <motion.div
+                    className={s.item}
+                    key={index}
+                    custom={index}
+                    variants={cardsVariants}
+                    initial={cardsVariants.hidden}
+                    animate={cardsVariants.visible(index)}
+                  >
+                    <li>
+                      <TariffCard {...tariff} />
+                    </li>
+                  </motion.div>
               )
             })}
         </ul>
@@ -58,9 +79,19 @@ export const PricesTabs = () => {
             .filter(tariff => tariff.type === 'exclusive')
             .map((tariff, index) => {
               return (
-                <li className={`${s.item} ${s.itemBig}`} key={index}>
-                  <TariffCard {...tariff} />
-                </li>
+                  <motion.div
+                    transition={{ duration: 0.5 }}
+                    className={`${s.item} ${s.itemBig}`}
+                    key={index}
+                    custom={index}
+                    variants={cardsVariants}
+                    initial={cardsVariants.hidden}
+                    animate={cardsVariants.visible(index)}
+                  >
+                    <li>
+                      <TariffCard {...tariff} />
+                    </li>
+                  </motion.div>
               )
             })}
         </ul>

@@ -1,9 +1,11 @@
-import { ComponentPropsWithoutRef } from 'react'
+import {AnimatePresence} from "framer-motion"
 
-import { TypographyVariant } from '@/common'
-import { Typography } from '@/components'
+import {ComponentPropsWithoutRef} from 'react'
+
+import {TypographyVariant} from '@/common'
+import {Typography} from '@/components'
 import * as TabsRadix from '@radix-ui/react-tabs'
-import { TabsContentProps, TabsListProps, TabsProps } from '@radix-ui/react-tabs'
+import {TabsContentProps, TabsListProps, TabsProps} from '@radix-ui/react-tabs'
 
 import s from './tabs.module.scss'
 
@@ -42,6 +44,12 @@ export const TabsTrigger = ({ value, ...props }: TabsTriggerPropsType) => {
   )
 }
 
-export const TabsContent = ({ className, value, ...props }: TabsContentProps) => {
-  return <TabsRadix.Content className={`${s.content} ${className}`} value={value} {...props} />
+export const TabsContent = ({ className, value, children, ...props }: TabsContentProps) => {
+  return (
+    <AnimatePresence>
+      <TabsRadix.Content className={`${s.content} ${className}`} value={value} {...props}>
+          {children}
+      </TabsRadix.Content>
+    </AnimatePresence>
+  )
 }
