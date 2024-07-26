@@ -1,5 +1,4 @@
-import { ButtonVariant } from '@/common'
-import { Button, Typography } from '@/components'
+import { SectionNavigation, Typography } from '@/components'
 
 import s from './hero-content.module.scss'
 
@@ -11,19 +10,7 @@ export const HeroContent = () => {
           “We help people make their events unforgettable and&nbsp;businesses achieve their goals” —{' '}
           <b>JWU&nbsp;Media</b>
         </Typography>
-        <div className={'section__buttons'}>
-          <Button as={'a'} className={'section__button'} href={'#'}>
-            get a free consultation
-          </Button>
-          <Button
-            as={'a'}
-            className={'section__button'}
-            href={'#'}
-            variant={ButtonVariant.secondary}
-          >
-            See prices
-          </Button>
-        </div>
+        <SectionNavigation />
       </div>
     </div>
   )
