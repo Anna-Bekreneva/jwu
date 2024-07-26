@@ -1,0 +1,22 @@
+@import '../../../styles/mixins';
+
+.buttons {
+  @include flex-normal($justify-content: flex-start);
+
+  gap: 8px;
+
+  /* stylelint-disable-next-line */
+  @include mq(sm) {
+    flex-direction: column;
+    width: 100%;
+  }
+}
+
+.button {
+  white-space: nowrap;
+
+  /* stylelint-disable-next-line */
+  @include mq(sm) {
+    width: 100%;
+  }
+}

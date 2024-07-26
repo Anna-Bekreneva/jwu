@@ -5,7 +5,7 @@ import s from './contacts.module.scss'
 
 export const Contacts = () => {
   return (
-    <section className={'section'}>
+    <section className={'section'} id={'contacts'}>
       <div className={`container container--large`}>
         <div className={`section__top ${s.top}`}>
           <Typography as={'h2'} isLine variant={TypographyVariant.title1}>
