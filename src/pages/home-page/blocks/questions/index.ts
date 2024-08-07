@@ -1,3 +1,1 @@
-export * from './questions'
-export * from './questions-accordion'
-export * from './model'
+export {QuestionBlock} from './ui/questions-block/questions-block'

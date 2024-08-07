@@ -5,7 +5,7 @@ import {
   Hero,
   Instagram,
   Prices,
-  Questions,
+  QuestionBlock,
   Reviews,
   Statistics,
   Videos,
@@ -26,7 +26,7 @@ export const HomePage = () => {
         <Statistics />
         <Reviews />
         <Prices />
-        <Questions />
+        <QuestionBlock />
         <Contacts />
         <Instagram />
       </main>
