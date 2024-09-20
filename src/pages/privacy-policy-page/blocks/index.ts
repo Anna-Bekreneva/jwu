@@ -1,1 +1,1 @@
-export { PrivacyPolicyContent } from './content/content'
+export { PrivacyPolicyWrapper } from './wrapper/privacy-policy-wrapper'

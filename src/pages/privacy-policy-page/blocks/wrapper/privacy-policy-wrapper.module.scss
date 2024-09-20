@@ -1,0 +1,36 @@
+@import '../../../../styles/mixins';
+
+.wrapper {
+  padding: 124px 0;
+  background-color: var(--color-purple-100);
+
+  /* stylelint-disable-next-line */
+  @include mq(md) {
+    padding: 90px 0;
+  }
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  gap: 50px;
+  position: relative;
+}
+
+.nav {
+  position: sticky;
+  max-width: 368px;
+  background-color: var(--color-white);
+  border-radius: 28px;
+  padding: 32px;
+  box-shadow: var(--box-shadow);
+  position: sticky;
+  align-self: flex-start;
+  top: 150px;
+  position: -webkit-sticky;
+
+  /* stylelint-disable-next-line */
+  @include mq(md) {
+    display: none;
+  }
+}

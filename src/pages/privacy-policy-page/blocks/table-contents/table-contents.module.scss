@@ -1,0 +1,31 @@
+.wrapper {
+  width: 100%;
+}
+
+.title {
+  margin-bottom: 16px;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.link {
+  color: var(--color-green-400);
+  border-radius: 4px;
+  outline: 0;
+
+  &:focus-visible {
+    box-shadow: var(--shadow-focus);
+  }
+
+  @media (any-hover: hover) {
+    transition: color 0.3s;
+
+    &:hover {
+      color: var(--color-magenta-500);
+    }
+  }
+}

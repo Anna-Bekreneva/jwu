@@ -1,7 +1,51 @@
+@import '../../../../styles/mixins';
+
+.wrapper {
+  background-color: var(--color-purple-100);
+}
+
+.container {
+
+  @include mq(md, min) {
+    width: 100%;
+    max-width: 900px;
+  }
+}
+
+.block {
+  strong {
+    display: inline-block;
+  }
+
+  &:not(:last-child) {
+    margin-bottom: 60px;
+  }
+
+  * {
+    &:not(:last-child) {
+      margin-bottom: 32px;
+    }
+  }
+}
+
 .text {
   * {
     &:not(:last-child) {
-      margin-bottom: 20px;
+      margin-bottom: 16px;
     }
   }
+}
+
+.noMargin {
+  * {
+    &:not(:last-child) {
+      margin-bottom: 6px;
+    }
+  }
+}
+
+
+.list {
+  padding-left: 20px;
+  list-style: unset;
 }
