@@ -1,8 +1,8 @@
 import { TypographyVariant } from '@/common'
 import { Picture, Typography } from '@/components'
-import { StatisticCards } from '@/pages'
 
 import s from './statistics.module.scss'
+import {StatisticCards} from "./statistic-cards/statistic-cards";
 
 const picture = {
   alt: 'Wedding',

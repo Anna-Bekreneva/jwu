@@ -1,6 +1,8 @@
-import { PriceBottom, PricesTabs, PricesTop } from '@/pages'
-
 import s from './prices.module.scss'
+
+import {PricesTop} from "./prices-top/prices-top";
+import {PriceBottom} from "./price-bottom/price-bottom";
+import {PricesTabs} from "./prices-tabs/prices-tabs";
 
 export const Prices = () => {
   return (

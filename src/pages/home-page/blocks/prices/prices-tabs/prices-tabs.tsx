@@ -2,10 +2,10 @@ import { useState } from 'react'
 
 import { TypographyVariant } from '@/common'
 import { Tabs, TabsContent, TabsList, TabsTrigger, TariffCard, Typography } from '@/components'
-import { tariffData } from '@/pages'
 import { motion } from 'framer-motion'
 
 import s from './prices-tabs.module.scss'
+import {tariffData} from "./prices-tabs-data";
 
 const TabsVariant = {
   exclusive: 'exclusive',
