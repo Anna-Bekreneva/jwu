@@ -4,10 +4,10 @@ export const APP_ROUTES = {
 }
 
 export const CONTACTS = {
-  // email: {
-  //   href: 'mailto:info@kindheartsfund.com',
-  //   label: 'info@kindheartsfund.com',
-  // },
+  email: {
+    href: 'mailto:a1759595@gmail.com',
+    label: 'a1759595@gmail.com',
+  },
   // instagram: {
   //   href: 'https://www.instagram.com/kindheartsfund?igsh=NnoxcjZ0dHV6N2d6',
   //   label: '@kindheartsfund',
