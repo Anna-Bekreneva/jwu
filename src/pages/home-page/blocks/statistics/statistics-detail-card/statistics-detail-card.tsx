@@ -1,8 +1,8 @@
+import s from './statistics-detail-card.module.scss'
+
 import { TypographyVariant } from '@/common'
 import { Typography } from '@/components'
-import { RatingLine, RatingLinePropsType } from '@/pages'
-
-import s from './statistics-detail-card.module.scss'
+import {RatingLine, RatingLinePropsType} from "../statistics-rating-line/statistics-rating-line";
 
 const ratingData: RatingLinePropsType[] = [
   { bgColor: '#FFA522', icon: 'jwu', iconAria: 'JWU mobile billboards', percent: 70 },
