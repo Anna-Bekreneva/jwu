@@ -1,6 +1,7 @@
-import { HelpMakeServices, HelpMakeSwiper, HelpMakeTop } from '@/pages'
-
 import s from './help-make.module.scss'
+import {HelpMakeTop} from "./help-make-top/help-make-top";
+import {HelpMakeServices} from "./help-make-services/help-make-services";
+import {HelpMakeSwiper} from "./help-make-swiper/help-make-swiper";
 
 export const HelpMake = () => {
   return (

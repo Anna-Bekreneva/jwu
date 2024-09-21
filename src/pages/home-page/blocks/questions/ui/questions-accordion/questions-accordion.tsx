@@ -3,7 +3,7 @@ import { memo } from 'react'
 import { Accordion, AccordionContent, AccordionHeader, AccordionItem } from '@/components'
 
 import s from './questions-accordion.module.scss'
-import {QuestionType} from "../../model";
+import {QuestionType} from "../../model/types";
 
 type Props = {
   items: QuestionType[]

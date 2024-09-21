@@ -1,5 +1,5 @@
 import {CustomHead, Layout} from '@/components'
-import {Contacts, HelpMake, Hero, Instagram, Prices, QuestionBlock, Reviews, Statistics, Videos,} from '@/pages'
+import {Contacts, HelpMake, Hero, Instagram, Prices, QuestionBlock, Reviews, Statistics, Videos} from '@/pages'
 
 export const HomePage = () => {
   return (

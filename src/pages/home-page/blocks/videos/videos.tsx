@@ -1,6 +1,6 @@
-import { VideosItems, VideosTop } from '@/pages'
-
 import s from './videos.module.scss'
+import {VideosTop} from "./videos-top/videos-top";
+import {VideosItems} from "./videos-items/videos-items";
 
 export const Videos = () => {
   return (
