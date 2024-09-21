@@ -112,3 +112,45 @@ main {
     display: none;
   }
 }
+
+.return {
+  @include link-focus;
+
+  width: max-content;
+  display: flex;
+  gap: 4px;
+
+  svg {
+    width: 16px;
+    height: 16px;
+    align-self: center;
+  }
+
+  @media (any-hover: hover) {
+    transition: color 0.3s;
+
+    svg {
+      transition: sroke 0.3s;
+    }
+
+    &:hover {
+      color: var(--color-orange-400);
+
+      svg {
+        stroke: var(--color-orange-400);
+      }
+    }
+  }
+}
+
+.link {
+  @include link-focus;
+
+  @media (any-hover: hover) {
+    transition: color 0.3s;
+
+    &:hover {
+      color: var(--color-orange-400);
+    }
+  }
+}

@@ -22,7 +22,7 @@ export const TableContents = ({ className }: Props) => {
               as={Link}
               className={s.link}
               href={'#'}
-              // offset={-120}
+              offset={-40}
               role={'menuitem'}
               smooth
               to={link.href}

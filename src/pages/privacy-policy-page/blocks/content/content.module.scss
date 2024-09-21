@@ -19,11 +19,21 @@
 
   &:not(:last-child) {
     margin-bottom: 60px;
+
+    /* stylelint-disable-next-line */
+    @include mq(lg) {
+      margin-bottom: 44px;
+    }
   }
 
   * {
     &:not(:last-child) {
       margin-bottom: 32px;
+
+      /* stylelint-disable-next-line */
+      @include mq(lg) {
+        margin-bottom: 24px;
+      }
     }
   }
 }
@@ -32,6 +42,11 @@
   * {
     &:not(:last-child) {
       margin-bottom: 16px;
+
+      /* stylelint-disable-next-line */
+      @include mq(lg) {
+        margin-bottom: 12px;
+      }
     }
   }
 }
@@ -44,8 +59,12 @@
   }
 }
 
-
 .list {
   padding-left: 20px;
   list-style: unset;
+
+  /* stylelint-disable-next-line */
+  @include mq(lg) {
+    padding-left: 12px;
+  }
 }

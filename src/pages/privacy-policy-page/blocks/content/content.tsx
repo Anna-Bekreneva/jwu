@@ -1,12 +1,18 @@
 import {TypographyVariant} from '@/common'
 import {Typography} from '@/components'
-
 import s from './content.module.scss'
-import {CONTACTS} from "@/utils";
+import {APP_ROUTES, CONTACTS} from "@/utils";
+import sprite from "@/assets/icons/sprite.svg";
 
 export const PrivacyPolicyContent = () => {
   return (
     <div className={s.container}>
+      <Typography as={'a'} variant={TypographyVariant.strong2} className={'link return'} href={APP_ROUTES.home}>
+        <svg aria-hidden viewBox={'0 0 24 24'} xmlns={'http://www.w3.org/2000/svg'}>
+          <use xlinkHref={`${sprite}#arrow`}/>
+        </svg>
+        Return to home
+      </Typography>
       <div className={s.block}>
         <Typography as={'h1'} variant={TypographyVariant.title1}>
           Privacy Policy
@@ -29,7 +35,7 @@ export const PrivacyPolicyContent = () => {
         </div>
       </div>
 
-      <div className={s.block}>
+      <div className={s.block} id={'interpretation'}>
         <Typography as={'h2'} variant={TypographyVariant.title2}>
           Interpretation and Definitions
         </Typography>
@@ -91,9 +97,9 @@ export const PrivacyPolicyContent = () => {
               <Typography as={'strong'}>Service</Typography> refers to the Website.
             </Typography>
             <Typography as={'li'}>
-              <Typography as={'strong'}>Service Provider</Typography> means any natural or legal person who processes
-              the data
-              on behalf of the Company. It refers to third-party companies or individuals employed by
+              <Typography as={'strong'}>Service Provider</Typography>
+              means any natural or legal person who processes the data on behalf of the Company. It refers to
+              third-party companies or individuals employed by
               the Company to facilitate the Service, to provide the Service on behalf of the Company, to
               perform services related to the Service or to assist the Company in analyzing how the
               Service is used.
@@ -105,12 +111,8 @@ export const PrivacyPolicyContent = () => {
               duration of a page visit).
             </Typography>
             <Typography as={'li'}>
-              <Typography as={'strong'}>Website</Typography> refers to JWU media, accessible from
-              {/* todo: create link */}
-              <Typography as={'a'}
-                          href={CONTACTS.webSite.href}
-                          target={'_blank'}
-              >
+              <Typography as={'strong'}>Website</Typography> refers to JWU media, accessible from &nbsp;
+              <Typography className={'link'} as={'a'} href={CONTACTS.webSite.href} target={'_blank'}>
                 {CONTACTS.webSite.label}
               </Typography>
             </Typography>
@@ -124,11 +126,17 @@ export const PrivacyPolicyContent = () => {
         </div>
       </div>
 
-      <div className={s.block}>
-        <Typography as={'h2'} variant={TypographyVariant.title2}>Collecting and Using Your Personal Data</Typography>
+      <div className={s.block} id={'collecting'}>
+        <Typography as={'h2'} variant={TypographyVariant.title2}>
+          Collecting and Using Your Personal Data
+        </Typography>
         <div className={s.text}>
-          <Typography as={'h3'} variant={TypographyVariant.subtitle}>Types of Data Collected</Typography>
-          <Typography as={'h4'} variant={TypographyVariant.strong1}>Personal Data</Typography>
+          <Typography as={'h3'} variant={TypographyVariant.subtitle}>
+            Types of Data Collected
+          </Typography>
+          <Typography as={'h4'} variant={TypographyVariant.strong1}>
+            Personal Data
+          </Typography>
           <Typography>
             While using Our Service, We may ask You to provide Us with certain personally identifiable
             information that can be used to contact or identify You. Personally identifiable information
@@ -151,7 +159,9 @@ export const PrivacyPolicyContent = () => {
         </div>
 
         <div className={s.text}>
-          <Typography as={'h4'} variant={TypographyVariant.strong1}>Usage Data</Typography>
+          <Typography as={'h4'} variant={TypographyVariant.strong1}>
+            Usage Data
+          </Typography>
           <Typography>Usage Data is collected automatically when using the Service.</Typography>
           <Typography>
             Usage Data may include information such as Your Device's Internet Protocol address (e.g. IP
@@ -173,7 +183,9 @@ export const PrivacyPolicyContent = () => {
         </div>
 
         <div className={s.text}>
-          <Typography as={'h4'} variant={TypographyVariant.strong1}>Tracking Technologies and Cookies</Typography>
+          <Typography as={'h4'} variant={TypographyVariant.strong1}>
+            Tracking Technologies and Cookies
+          </Typography>
           <Typography>
             We use Cookies and similar tracking technologies to track the activity on Our Service and
             store certain information. Tracking technologies used are beacons, tags, and scripts to
@@ -202,7 +214,9 @@ export const PrivacyPolicyContent = () => {
             Cookies can be &quot;Persistent&quot; or &quot;Session&quot; Cookies. Persistent Cookies
             remain on Your personal computer or mobile device when You go offline, while Session Cookies
             are deleted as soon as You close Your web browser. Learn more about cookies on the{' '}
-            <a
+            <Typography
+              className={'link'}
+              as={'a'}
               href={
                 'https://www.freeprivacypolicy.com/blog/sample-privacy-policy-template/#Use_Of_Cookies_And_Tracking'
               }
@@ -210,7 +224,7 @@ export const PrivacyPolicyContent = () => {
               target={'_blank'}
             >
               Free Privacy Policy website
-            </a>{' '}
+            </Typography>{' '}
             article.
           </Typography>
           <Typography>We use both Session and Persistent Cookies for the purposes set out below:</Typography>
@@ -255,7 +269,9 @@ export const PrivacyPolicyContent = () => {
         </div>
 
         <div className={s.text}>
-          <Typography as={'h3'} variant={TypographyVariant.subtitle}>Use of Your Personal Data</Typography>
+          <Typography as={'h3'} variant={TypographyVariant.subtitle}>
+            Use of Your Personal Data
+          </Typography>
           <Typography>The Company may use Personal Data for the following purposes:</Typography>
           <ul className={s.list}>
             <Typography as={'li'}>
@@ -461,37 +477,37 @@ export const PrivacyPolicyContent = () => {
         </div>
       </div>
 
-      <div className={s.block}>
+      <div className={s.block} id={'childrens'}>
         <Typography as={'h2'} variant={TypographyVariant.title2}>Children's Privacy</Typography>
-          <Typography>
-            Our Service does not address anyone under the age of 13. We do not knowingly collect
-            personally identifiable information from anyone under the age of 13. If You are a parent or
-            guardian and You are aware that Your child has provided Us with Personal Data, please
-            contact Us. If We become aware that We have collected Personal Data from anyone under the
-            age of 13 without verification of parental consent, We take steps to remove that information
-            from Our servers.
-          </Typography>
-          <Typography>
-            If We need to rely on consent as a legal basis for processing Your information and Your
-            country requires consent from a parent, We may require Your parent's consent before We
-            collect and use that information.
-          </Typography>
+        <Typography>
+          Our Service does not address anyone under the age of 13. We do not knowingly collect
+          personally identifiable information from anyone under the age of 13. If You are a parent or
+          guardian and You are aware that Your child has provided Us with Personal Data, please
+          contact Us. If We become aware that We have collected Personal Data from anyone under the
+          age of 13 without verification of parental consent, We take steps to remove that information
+          from Our servers.
+        </Typography>
+        <Typography>
+          If We need to rely on consent as a legal basis for processing Your information and Your
+          country requires consent from a parent, We may require Your parent's consent before We
+          collect and use that information.
+        </Typography>
       </div>
 
-      <div className={s.block}>
+      <div className={s.block} id={'links'}>
         <Typography as={'h2'} variant={TypographyVariant.title2}>Links to Other Websites</Typography>
-          <Typography>
-            Our Service may contain links to other websites that are not operated by Us. If You click on
-            a third party link, You will be directed to that third party's site. We strongly advise You
-            to review the Privacy Policy of every site You visit.
-          </Typography>
-          <Typography>
-            We have no control over and assume no responsibility for the content, privacy policies or
-            practices of any third party sites or services.
-          </Typography>
+        <Typography>
+          Our Service may contain links to other websites that are not operated by Us. If You click on
+          a third party link, You will be directed to that third party's site. We strongly advise You
+          to review the Privacy Policy of every site You visit.
+        </Typography>
+        <Typography>
+          We have no control over and assume no responsibility for the content, privacy policies or
+          practices of any third party sites or services.
+        </Typography>
       </div>
 
-      <div className={s.block}>
+      <div className={s.block} id={'changes'}>
         <Typography as={'h2'} variant={TypographyVariant.title2}>Changes to this Privacy Policy</Typography>
         <Typography>
           We may update Our Privacy Policy from time to time. We will notify You of any changes by
@@ -506,11 +522,20 @@ export const PrivacyPolicyContent = () => {
           You are advised to review this Privacy Policy periodically for any changes. Changes to this
           Privacy Policy are effective when they are posted on this page.
         </Typography>
+      </div>
+
+      <div className={s.block} id={'contacts'}>
         <Typography as={'h2'} variant={TypographyVariant.title2}>Contact Us</Typography>
-        <Typography>If you have any questions about this Privacy Policy, You can contact us:</Typography>
-        <ul>
-          <Typography as={'li'}>By email: a1759595@gmail.com</Typography>
-        </ul>
+        <div className={s.text}>
+          <Typography>If you have any questions about this Privacy Policy, You can contact us:</Typography>
+          <ul>
+            <Typography as={'li'}>By email:{' '}
+              <Typography className={'link'} as={'a'} href={CONTACTS.email.label}>
+                          {CONTACTS.email.label}
+              </Typography>
+            </Typography>
+          </ul>
+        </div>
       </div>
     </div>
   )
