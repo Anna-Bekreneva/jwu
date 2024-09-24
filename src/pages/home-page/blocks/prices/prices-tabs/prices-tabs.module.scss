@@ -13,41 +13,30 @@
 }
 
 .items {
-  @include flex-normal($align-items: flex-start);
-
-  flex-wrap: wrap;
+  display: flex;
   gap: 20px;
-  width: 100%;
+  overflow-x: auto;
+  width: calc(100% + 80px);
+  margin: -40px 0 0 -40px;
+  padding: 40px 32px 40px 40px;
+}
+
+.itemWrapper {
+  flex-grow: 1;
+  align-self: normal;
+  flex-shrink: 0;
+  width: 318px;
+}
+
+.itemWrapperBig {
+  width: 48%;
 
   /* stylelint-disable-next-line */
   @include mq(md) {
-    overflow-x: auto;
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-
-    width: calc(100% + 80px);
-    margin: -40px 0 0 -40px;
-    padding: 40px 32px 40px 40px;
+    width: 330px;
   }
 }
 
 .item {
-  flex-grow: 1;
-  align-self: normal;
-  width: 23%;
-
-  /* stylelint-disable-next-line */
-  @include mq(md) {
-    flex-shrink: 0;
-    width: 318px;
-  }
-}
-
-.itemBig {
-  width: 49%;
-
-  /* stylelint-disable-next-line */
-  @include mq(md) {
-    width: 318px;
-  }
+  height: 100%;
 }
