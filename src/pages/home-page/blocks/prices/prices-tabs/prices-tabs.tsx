@@ -60,13 +60,13 @@ export const PricesTabs = () => {
               return (
                 <motion.div
                   animate={cardsVariants.visible(index)}
-                  className={s.item}
+                  className={s.itemWrapper}
                   custom={index}
                   initial={cardsVariants.hidden}
                   key={index}
                   variants={cardsVariants}
                 >
-                  <li>
+                  <li className={s.item}>
                     <TariffCard {...tariff} />
                   </li>
                 </motion.div>
@@ -82,14 +82,14 @@ export const PricesTabs = () => {
               return (
                 <motion.div
                   animate={cardsVariants.visible(index)}
-                  className={`${s.item} ${s.itemBig}`}
+                  className={`${s.itemWrapper} ${s.itemWrapperBig}`}
                   custom={index}
                   initial={cardsVariants.hidden}
                   key={index}
                   transition={{ duration: 0.5 }}
                   variants={cardsVariants}
                 >
-                  <li>
+                  <li className={s.item}>
                     <TariffCard {...tariff} />
                   </li>
                 </motion.div>
