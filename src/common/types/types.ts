@@ -15,3 +15,10 @@ export const TypographyVariant = {
   title1: 'title1',
   title2: 'title2',
 } as const
+
+export type ServiceData = {
+  icon: string
+  iconBg?: 'orange' | 'purple'
+  text?: string
+  title: string
+}

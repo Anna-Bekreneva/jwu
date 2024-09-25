@@ -1,26 +1,25 @@
-import { ComponentPropsWithoutRef, ElementType } from 'react'
+import {ChangeEvent, ComponentPropsWithoutRef, ElementType, forwardRef} from 'react'
 
 import { TypographyVariant } from '@/common'
 import { Typography } from '@/components'
 
 import s from './field.module.scss'
 
-type Props<T extends ElementType> = {
+export type TextFieldProps<T extends ElementType> = {
   as?: T
   errorMessage?: string
   label?: string
   onValueChange?: (value: string) => void
-}
+} & ComponentPropsWithoutRef<T>
 
-export type FieldProps<T extends ElementType> = Props<T> &
-  Omit<ComponentPropsWithoutRef<T>, keyof Props<T>>
-export const Field = <T extends ElementType = 'input'>(
-  props: FieldProps<T> & Omit<ComponentPropsWithoutRef<T>, keyof FieldProps<T>>
-) => {
+export const Field = forwardRef<HTMLDivElement, TextFieldProps<ElementType>>((props, ref) => {
   const { as: Tag = 'input', errorMessage, id, label, onValueChange, ...rest } = props
 
+  const changeHandler = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>
+    onValueChange?.(e.currentTarget.value)
+
   return (
-    <div className={s.box}>
+    <div className={s.box} ref={ref}>
       {label && id && (
         <Typography
           as={'label'}
@@ -34,7 +33,7 @@ export const Field = <T extends ElementType = 'input'>(
       <Tag
         className={`${s.field} ${Tag === 'textarea' && s.textarea}`}
         id={id}
-        onChange={e => onValueChange?.(e.currentTarget.value)}
+        onChange={changeHandler}
         {...rest}
       />
       {errorMessage && (
@@ -44,4 +43,4 @@ export const Field = <T extends ElementType = 'input'>(
       )}
     </div>
   )
-}
+})
