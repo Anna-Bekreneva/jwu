@@ -1,9 +1,5 @@
-export type ServiceData = {
-  icon: string
-  iconBg?: 'orange' | 'purple'
-  text?: string
-  title: string
-}
+import {ServiceData} from "@/common";
+
 export const dataServices: ServiceData[] = [
   {
     icon: 'mobile-bilboards',

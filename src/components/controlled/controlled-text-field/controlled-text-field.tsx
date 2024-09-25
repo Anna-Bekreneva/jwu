@@ -1,13 +1,13 @@
 import { ElementType } from 'react'
 import { Control, FieldPath, FieldValues, useController } from 'react-hook-form'
 
-import { Field, FieldProps } from '@/components'
+import { Field, TextFieldProps } from '@/components'
 
 type ControlledTextFieldProps<T extends FieldValues, D extends ElementType> = {
   as?: D
   control: Control<T>
   name: FieldPath<T>
-} & Omit<FieldProps<D>, 'id' | 'onChange' | 'value'>
+} & Omit<TextFieldProps<D>, 'id' | 'onChange' | 'value'>
 
 export const ControlledTextField = <T extends FieldValues, D extends ElementType>({
   as,

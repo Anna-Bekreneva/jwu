@@ -1,8 +1,7 @@
 import { ComponentPropsWithoutRef } from 'react'
 
-import { TypographyVariant } from '@/common'
+import {ServiceData, TypographyVariant} from '@/common'
 import { Typography } from '@/components'
-import { ServiceData } from '@/pages'
 
 import s from './service-card.module.scss'
 
