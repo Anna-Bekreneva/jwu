@@ -37,20 +37,12 @@ export const PricesTabs = () => {
       value={value}
     >
       <TabsList className={s.tabsList}>
-        <Typography
-          as={TabsTrigger}
-          value={TabsVariant.standart}
-          variant={TypographyVariant.title2}
-        >
+        <TabsTrigger value={TabsVariant.standart}>
           Standart
-        </Typography>
-        <Typography
-          as={TabsTrigger}
-          value={TabsVariant.exclusive}
-          variant={TypographyVariant.title2}
-        >
+        </TabsTrigger>
+        <TabsTrigger value={TabsVariant.exclusive}>
           Exclusive
-        </Typography>
+        </TabsTrigger>
       </TabsList>
       <TabsContent value={TabsVariant.standart}>
         <ul className={s.items}>
