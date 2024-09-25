@@ -1,7 +1,6 @@
 import { useState } from 'react'
 
-import { TypographyVariant } from '@/common'
-import { Tabs, TabsContent, TabsList, TabsTrigger, TariffCard, Typography } from '@/components'
+import { Tabs, TabsContent, TabsList, TabsTrigger, TariffCard } from '@/components'
 import { motion } from 'framer-motion'
 
 import s from './prices-tabs.module.scss'
