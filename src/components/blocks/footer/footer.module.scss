@@ -26,12 +26,14 @@
   }
 }
 
+.bottom {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px 40px;
+  width: 100%;
+}
+
 .copyright {
   color: var(--color-purple-250);
-  text-align: center;
-
-  /* stylelint-disable-next-line */
-  @include mq(lg, min) {
-    width: 100%;
-  }
 }
