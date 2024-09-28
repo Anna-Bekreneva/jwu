@@ -1,6 +1,14 @@
 @import '../../../styles/mixins';
 
 .item {
+  @include adaptive-value-base('border-radius', 20, 12, 1);
+
+  background-color: var(--color-white);
+}
+
+.trigger {
+  @include link-focus;
+  @include adaptive-value-base('font-size', 24, 16, 1);
   @include adaptive-value-base('padding-top', 24, 12, 1);
   @include adaptive-value-base('padding-bottom', 24, 12, 1);
   @include adaptive-value-base('padding-right', 24, 12, 1);
@@ -8,21 +16,37 @@
   @include adaptive-value-base('border-radius', 20, 12, 1);
 
   background-color: var(--color-white);
-}
-
-.trigger {
-  @include adaptive-value-base('font-size', 24, 16, 1);
 
   cursor: pointer;
-
-  position: relative;
-
   display: inline-block;
-
   width: 100%;
   padding-right: 48px;
-
   text-align: left;
+
+  @media (any-hover: hover) {
+    &:hover {
+      .triggerText {
+        &::before,
+        &::after {
+          background-color: var(--color-magenta-500);
+        }
+      }
+    }
+  }
+
+  &[data-state='closed'] {
+    .triggerText {
+      &::after {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.triggerText {
+  position: relative;
+  width: 100%;
+  display: block;
 
   &::before,
   &::after {
@@ -37,6 +61,7 @@
 
     background-color: var(--color-purple-250);
     border-radius: 2px;
+    transition: background-color 0.3s;
   }
 
   &::before {
@@ -49,17 +74,6 @@
     opacity: 0;
     transition: opacity 0.3s;
   }
-
-  &[data-state='closed'] {
-    &::after {
-      opacity: 1;
-    }
-  }
-}
-
-.box {
-  padding-top: 20px;
-  padding-right: 48px;
 }
 
 .content {
@@ -67,6 +81,8 @@
   line-height: 1.5;
   color: var(--color-purple-700);
   overflow: hidden;
+  background-color: var(--color-white);
+  border-radius: inherit;
 
   &[data-state='closed'] {
     animation: slide-up 300ms cubic-bezier(0.87, 0, 0.13, 1);
@@ -87,6 +103,16 @@
       margin-bottom: 12px;
     }
   }
+}
+
+.box {
+  @include adaptive-value-base('padding-top', 24, 12, 1);
+  @include adaptive-value-base('padding-bottom', 24, 12, 1);
+  @include adaptive-value-base('padding-right', 24, 12, 1);
+  @include adaptive-value-base('padding-left', 24, 12, 1);
+
+  max-width: 720px;
+  width: 100%;
 }
 
 @keyframes slide-down {

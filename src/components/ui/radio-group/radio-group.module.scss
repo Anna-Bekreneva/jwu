@@ -24,6 +24,9 @@
 
     border: 2px solid var(--color-magenta-500);
     border-radius: 50%;
+    outline: 0;
+
+    transition: border-color 0.3s;
 
     &::before {
       content: '';
@@ -41,6 +44,10 @@
       border-radius: 50%;
 
       transition: opacity 0.3s;
+    }
+
+    &:focus {
+      border-color: var(--color-orange-400);
     }
 
     &[data-state='checked'] {

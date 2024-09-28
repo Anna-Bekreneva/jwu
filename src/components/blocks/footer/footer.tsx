@@ -13,10 +13,10 @@ export const Footer = () => {
           <Menu className={s.menu}/>
           <Socials/>
           <div className={s.bottom}>
-            <Typography className={s.copyright} as={'a'} href={APP_ROUTES.privacyPolicy} variant={TypographyVariant.caption1}>
+            <Typography className={s.bottomLink} as={'a'} href={APP_ROUTES.privacyPolicy} variant={TypographyVariant.caption1}>
               Privacy policy
             </Typography>
-            <Typography className={s.copyright} as={'span'} variant={TypographyVariant.caption1}>
+            <Typography className={s.bottomText} as={'span'} variant={TypographyVariant.caption1}>
               © 2023 JWU Media
             </Typography>
           </div>

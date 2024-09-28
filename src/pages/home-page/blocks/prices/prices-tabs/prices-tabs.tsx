@@ -3,8 +3,9 @@ import { useState } from 'react'
 import { Tabs, TabsContent, TabsList, TabsTrigger, TariffCard } from '@/components'
 import { motion } from 'framer-motion'
 
-import s from './prices-tabs.module.scss'
 import {tariffData} from "./prices-tabs-data";
+
+import s from './prices-tabs.module.scss'
 
 const TabsVariant = {
   exclusive: 'exclusive',

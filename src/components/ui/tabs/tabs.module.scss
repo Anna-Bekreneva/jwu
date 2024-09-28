@@ -11,9 +11,20 @@
   gap: 50px;
 }
 
+.content {
+  outline: 0;
+}
+
 .button {
+  @include link-focus;
   text-transform: capitalize;
-  transition: color 0.3s;
+  transition: color 0.3s, box-shadow 0.3s;
+
+  @media (any-hover: hover) {
+    &:hover {
+      color: var(--color-orange-400);
+    }
+  }
 
   svg {
     bottom: -20px;

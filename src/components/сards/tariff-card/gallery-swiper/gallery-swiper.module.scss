@@ -1,3 +1,5 @@
+@import '../../../../styles/mixins';
+
 .galleryWrapper {
   width: calc(100% + 24px);
   margin-right: -24px;
@@ -15,12 +17,28 @@
 
 .galleryItem {
   width: 140px !important;
-  height: 84px !important;
+  height: auto !important;
   padding: 4px;
 
   background-color: var(--color-white);
   border-radius: 4px;
   box-shadow: var(--box-shadow);
+}
+
+.galleryLink {
+  @include link-focus;
+
+  display: flex;
+  height: 100%;
+
+
+  @media (any-hover: hover) {
+    transition: opacity 0.3s;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
 }
 
 .galleryPicture {
