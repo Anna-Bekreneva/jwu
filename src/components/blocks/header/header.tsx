@@ -7,7 +7,7 @@ export const Header = () => {
 
   return (
     <header className={s.header}>
-      {isOpenMenu && <div aria-hidden className={'overlay'} />}
+      <div aria-hidden className={'overlay'} data-active={isOpenMenu}></div>
       <div className={s.wrapper} data-open={isOpenMenu}>
         <div className={'container container--large'}>
           <nav className={s.nav}>

@@ -1,7 +1,8 @@
-import { QuestionsTop } from './ui/questions-top/questions-top'
 import s from './questions-block.module.scss'
-import {QuestionsAccordion} from "./ui/questions-accordion/questions-accordion";
-import { questions } from './model/questions-data';
+
+import { questions } from './model/questions-data'
+import { QuestionsAccordion } from './ui/questions-accordion/questions-accordion'
+import { QuestionsTop } from './ui/questions-top/questions-top'
 
 export const QuestionBlock = () => {
   const leftCount = Math.floor(questions.length / 2)

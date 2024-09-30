@@ -1,5 +1,5 @@
 export * from './menu'
-export {PhoneLink} from './phone-link/phone-link'
+export { PhoneLink } from './phone-link/phone-link'
 export * from './button'
 export * from './logo'
 export * from './typography'

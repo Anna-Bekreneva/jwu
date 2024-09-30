@@ -1,15 +1,16 @@
-import {Header, Footer} from "@/components";
-import {ReactNode} from "react";
+import { ReactNode } from 'react'
+
+import { Footer, Header } from '@/components'
 
 type Props = {
   children: ReactNode
 }
-export const Layout = ({children}: Props) => {
+export const Layout = ({ children }: Props) => {
   return (
     <div className={'wrapper'}>
-      <Header/>
+      <Header />
       {children}
-      <Footer/>
+      <Footer />
     </div>
   )
 }

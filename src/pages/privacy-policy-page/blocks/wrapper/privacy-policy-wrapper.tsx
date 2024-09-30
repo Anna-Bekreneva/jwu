@@ -1,6 +1,7 @@
-import s from './privacy-policy-wrapper.module.scss';
-import {PrivacyPolicyContent} from "../content/content";
-import {TableContents} from "../table-contents/table-contents";
+import s from './privacy-policy-wrapper.module.scss'
+
+import { PrivacyPolicyContent } from '../content/content'
+import { TableContents } from '../table-contents/table-contents'
 export const PrivacyPolicyWrapper = () => {
   return (
     <section className={s.wrapper}>

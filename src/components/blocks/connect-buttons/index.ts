@@ -1,1 +1,1 @@
-export {ConnectButtons} from './connect-buttons'
+export { ConnectButtons } from './connect-buttons'

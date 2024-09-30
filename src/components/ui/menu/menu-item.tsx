@@ -1,4 +1,4 @@
-import {Link} from "react-scroll";
+import { Link } from 'react-scroll'
 
 export type MenuItemProps = {
   href?: string
@@ -9,12 +9,7 @@ export type MenuItemProps = {
 export const MenuItem = ({ href = '#', text, to }: MenuItemProps) => {
   return (
     <li>
-      <Link
-        className={'navigate-link'}
-        href={href}
-        smooth
-        to={to}
-      >
+      <Link className={'navigate-link'} href={href} smooth to={to}>
         {text}
       </Link>
     </li>

@@ -1,6 +1,7 @@
 import s from './reviews.module.scss'
-import {ReviewsTop} from "./reviews-top/reviews-top";
-import {ReviewsSwiper} from "./reviews-swiper/reviews-swiper";
+
+import { ReviewsSwiper } from './reviews-swiper/reviews-swiper'
+import { ReviewsTop } from './reviews-top/reviews-top'
 
 export const Reviews = () => {
   return (

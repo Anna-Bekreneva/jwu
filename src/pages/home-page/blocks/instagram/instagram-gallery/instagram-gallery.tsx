@@ -1,7 +1,8 @@
 import { Picture } from '@/components'
 
 import s from './instagram-gallery.module.scss'
-import {gallery} from "./instagram-gallery-data";
+
+import { gallery } from './instagram-gallery-data'
 
 export const InstagramGallery = () => {
   return (

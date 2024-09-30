@@ -1,15 +1,16 @@
-import 'swiper/css'
-import s from './hero-swiper.module.scss'
-
 import { Picture, ServiceCard } from '@/components'
 import { Autoplay } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
 
+import 'swiper/css'
+
+import s from './hero-swiper.module.scss'
+
 type CardType = {
-  type: 'card'
-  title: string
   icon: string
   iconBg?: string
+  title: string
+  type: 'card'
 }
 
 type PictureType = {

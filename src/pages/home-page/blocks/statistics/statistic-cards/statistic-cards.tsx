@@ -1,7 +1,8 @@
+import { StatisticCard, StatisticCardPropsType } from '@/components'
+
 import s from './statistic-card.module.scss'
 
-import { StatisticCard, StatisticCardPropsType } from '@/components'
-import {DetailCard} from "../statistics-detail-card/statistics-detail-card";
+import { DetailCard } from '../statistics-detail-card/statistics-detail-card'
 
 const cards: StatisticCardPropsType[] = [
   {

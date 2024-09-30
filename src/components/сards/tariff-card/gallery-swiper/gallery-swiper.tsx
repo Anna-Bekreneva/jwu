@@ -23,7 +23,11 @@ export const GallerySwiper = ({ fancyboxName, gallery }: Props) => {
       <Swiper className={s.gallery} slidesPerGroup={1} slidesPerView={'auto'} spaceBetween={8}>
         {gallery.map((item, index) => (
           <SwiperSlide className={s.galleryItem} key={index}>
-            <a className={s.galleryLink} data-fancybox={fancyboxName} href={item.fancyboxHref ?? `${item.basePath}.jpg`}>
+            <a
+              className={s.galleryLink}
+              data-fancybox={fancyboxName}
+              href={item.fancyboxHref ?? `${item.basePath}.jpg`}
+            >
               <Picture
                 alt={item.alt}
                 avif={`${item.basePath}.avif`}

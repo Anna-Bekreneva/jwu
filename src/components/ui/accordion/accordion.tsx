@@ -35,7 +35,9 @@ export const AccordionHeader = ({ children, className, ...rest }: AccordionHeade
     <AccordionRadix.Header className={className} {...rest}>
       <AccordionRadix.Trigger asChild>
         <Typography as={'button'} className={s.trigger} variant={TypographyVariant.subtitle}>
-          <Typography as={'span'} className={s.triggerText}>{children}</Typography>
+          <Typography as={'span'} className={s.triggerText}>
+            {children}
+          </Typography>
         </Typography>
       </AccordionRadix.Trigger>
     </AccordionRadix.Header>

@@ -10,7 +10,7 @@ export const VideosItems = () => {
     <ul className={s.items}>
       {dataVideo.map((item, index) => (
         <li className={`${s.item} card`} key={index}>
-          <video className={s.video} src={item.src} autoPlay controls loop muted/>
+          <video autoPlay className={s.video} controls loop muted src={item.src} />
         </li>
       ))}
     </ul>

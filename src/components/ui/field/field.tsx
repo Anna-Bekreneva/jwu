@@ -1,4 +1,4 @@
-import {ChangeEvent, ComponentPropsWithoutRef, ElementType, forwardRef} from 'react'
+import { ChangeEvent, ComponentPropsWithoutRef, ElementType, forwardRef } from 'react'
 
 import { TypographyVariant } from '@/common'
 import { Typography } from '@/components'

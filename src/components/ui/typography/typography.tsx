@@ -1,4 +1,11 @@
-import {ComponentPropsWithoutRef, ElementRef, ElementType, ForwardedRef, forwardRef, memo} from 'react'
+import {
+  ComponentPropsWithoutRef,
+  ElementRef,
+  ElementType,
+  ForwardedRef,
+  forwardRef,
+  memo,
+} from 'react'
 
 import { TypographyVariant } from '@/common'
 import { useTypography } from '@/components'
@@ -12,7 +19,8 @@ type Props<T> = {
   variant?: keyof typeof TypographyVariant
 }
 const TypographyPolymorph = <T extends ElementType = 'p'>(
-  props: Props<T> & Omit<ComponentPropsWithoutRef<T>, keyof Props<T>>, ref: ElementRef<T>
+  props: Props<T> & Omit<ComponentPropsWithoutRef<T>, keyof Props<T>>,
+  ref: ElementRef<T>
 ) => {
   const {
     as: Tag = 'p',
@@ -45,7 +53,7 @@ export const Typography = memo(
   forwardRef(TypographyPolymorph) as <T extends ElementType = 'p'>(
     props: Props<T> &
       Omit<ComponentPropsWithoutRef<T>, keyof Props<T>> & {
-      ref?: ForwardedRef<ElementRef<T>>
-    }
+        ref?: ForwardedRef<ElementRef<T>>
+      }
   ) => ReturnType<typeof TypographyPolymorph>
 )

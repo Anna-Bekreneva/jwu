@@ -1,14 +1,22 @@
+import { Link } from 'react-scroll'
+
 import sprite from '@/assets/icons/sprite.svg'
 import { ButtonVariant } from '@/common'
 import { Button } from '@/components'
 
 import s from './connect-buttons.module.scss'
-import {Link} from "react-scroll";
 
 export const ConnectButtons = () => {
   return (
     <div className={s.contacts}>
-      <Button as={Link} className={s.button} href={'#'} to={'contacts'} variant={ButtonVariant.secondary} smooth>
+      <Button
+        as={Link}
+        className={s.button}
+        href={'#'}
+        smooth
+        to={'contacts'}
+        variant={ButtonVariant.secondary}
+      >
         Contact us
       </Button>
       <Button aria-label={'whatsapp'} as={'a'} href={'#'} isIcon>

@@ -1,9 +1,9 @@
-import {ElementRef, forwardRef, ReactNode} from 'react'
+import { ElementRef, ReactNode, forwardRef } from 'react'
 
-import {TypographyVariant} from '@/common'
-import {Typography} from '@/components'
+import { TypographyVariant } from '@/common'
+import { Typography } from '@/components'
 import * as RadixRadioGroup from '@radix-ui/react-radio-group'
-import {RadioGroupItemProps, RadioGroupProps} from '@radix-ui/react-radio-group'
+import { RadioGroupItemProps, RadioGroupProps } from '@radix-ui/react-radio-group'
 
 import s from './radio-group.module.scss'
 
@@ -13,13 +13,11 @@ export type CustomRadioGroupProps = RadioGroupProps & {
   errorMessage?: string
 }
 
-export const RadioGroup = forwardRef<ElementRef<typeof RadixRadioGroup.Root>, CustomRadioGroupProps>((props, ref) => {
-  const {
-    children,
-    className,
-    errorMessage,
-    ...rest
-  } = props
+export const RadioGroup = forwardRef<
+  ElementRef<typeof RadixRadioGroup.Root>,
+  CustomRadioGroupProps
+>((props, ref) => {
+  const { children, className, errorMessage, ...rest } = props
 
   return (
     <RadixRadioGroup.Root className={`${s.root} ${className}`} {...rest} ref={ref}>
@@ -37,7 +35,7 @@ type RadioItemProps = {
   label: string
 } & Omit<RadioGroupItemProps, 'id'>
 
-export const RadioItem = ({disabled, label, value, ...props}: RadioItemProps) => {
+export const RadioItem = ({ disabled, label, value, ...props }: RadioItemProps) => {
   const innerClassName = `${s.inner} ${disabled ? s.disabled : ''}`
 
   return (

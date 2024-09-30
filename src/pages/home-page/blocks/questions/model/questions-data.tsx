@@ -1,4 +1,4 @@
-import {QuestionType} from "./types";
+import { QuestionType } from './types'
 
 export const questions: QuestionType[] = [
   {

@@ -2,8 +2,9 @@ import { TypographyVariant } from '@/common'
 import { Typography } from '@/components'
 
 import s from './hero.module.scss'
-import {HeroSwiper} from "./hero-swiper/hero-swiper";
-import {HeroContent} from "./hero-content/hero-content";
+
+import { HeroContent } from './hero-content/hero-content'
+import { HeroSwiper } from './hero-swiper/hero-swiper'
 
 export const Hero = () => {
   return (

@@ -1,5 +1,5 @@
-import {InstagramTop} from "./instagram-top/instagram-top";
-import {InstagramGallery} from "./instagram-gallery/instagram-gallery";
+import { InstagramGallery } from './instagram-gallery/instagram-gallery'
+import { InstagramTop } from './instagram-top/instagram-top'
 
 export const Instagram = () => {
   return (

@@ -1,6 +1,7 @@
 import s from './videos.module.scss'
-import {VideosTop} from "./videos-top/videos-top";
-import {VideosItems} from "./videos-items/videos-items";
+
+import { VideosItems } from './videos-items/videos-items'
+import { VideosTop } from './videos-top/videos-top'
 
 export const Videos = () => {
   return (

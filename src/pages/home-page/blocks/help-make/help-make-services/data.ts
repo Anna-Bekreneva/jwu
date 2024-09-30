@@ -1,4 +1,4 @@
-import {ServiceData} from "@/common";
+import { ServiceData } from '@/common'
 
 export const dataServices: ServiceData[] = [
   {

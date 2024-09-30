@@ -8,11 +8,11 @@ import {
   RadioItem,
   Typography,
 } from '@/components'
+import { APP_ROUTES } from '@/utils'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
 
 import s from './form.module.scss'
-import {APP_ROUTES} from "@/utils";
 
 const ContactsFormSchema = z.object({
   aim: z.string(),
@@ -104,7 +104,12 @@ export const Form = ({ className }: Props) => {
       </div>
       <Typography variant={TypographyVariant.caption1}>
         By clicking on the button, I agree to the JWU’s{' '}
-        <Typography as={'a'} className={s.link} href={APP_ROUTES.privacyPolicy} variant={TypographyVariant.caption1}>
+        <Typography
+          as={'a'}
+          className={s.link}
+          href={APP_ROUTES.privacyPolicy}
+          variant={TypographyVariant.caption1}
+        >
           Privacy Policy
         </Typography>
       </Typography>

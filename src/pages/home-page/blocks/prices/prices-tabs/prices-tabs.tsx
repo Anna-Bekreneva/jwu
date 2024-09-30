@@ -3,9 +3,9 @@ import { useState } from 'react'
 import { Tabs, TabsContent, TabsList, TabsTrigger, TariffCard } from '@/components'
 import { motion } from 'framer-motion'
 
-import {tariffData} from "./prices-tabs-data";
-
 import s from './prices-tabs.module.scss'
+
+import { tariffData } from './prices-tabs-data'
 
 const TabsVariant = {
   exclusive: 'exclusive',
@@ -37,12 +37,8 @@ export const PricesTabs = () => {
       value={value}
     >
       <TabsList className={s.tabsList}>
-        <TabsTrigger value={TabsVariant.standart}>
-          Standart
-        </TabsTrigger>
-        <TabsTrigger value={TabsVariant.exclusive}>
-          Exclusive
-        </TabsTrigger>
+        <TabsTrigger value={TabsVariant.standart}>Standart</TabsTrigger>
+        <TabsTrigger value={TabsVariant.exclusive}>Exclusive</TabsTrigger>
       </TabsList>
       <TabsContent value={TabsVariant.standart}>
         <ul className={s.items}>

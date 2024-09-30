@@ -8,5 +8,6 @@
   /* stylelint-disable-next-line */
   @include mq(xl) {
     gap: 28px;
+    flex-direction: column;
   }
 }

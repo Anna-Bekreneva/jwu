@@ -1,1 +1,1 @@
-export * from './constants/base'
+export { APP_ROUTES, CONTACTS } from './constants/base'

@@ -1,8 +1,8 @@
 import s from './prices.module.scss'
 
-import {PricesTop} from "./prices-top/prices-top";
-import {PriceBottom} from "./price-bottom/price-bottom";
-import {PricesTabs} from "./prices-tabs/prices-tabs";
+import { PriceBottom } from './price-bottom/price-bottom'
+import { PricesTabs } from './prices-tabs/prices-tabs'
+import { PricesTop } from './prices-top/prices-top'
 
 export const Prices = () => {
   return (

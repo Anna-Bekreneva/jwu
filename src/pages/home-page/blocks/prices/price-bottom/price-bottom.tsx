@@ -1,5 +1,5 @@
 import { TypographyVariant } from '@/common'
-import {ConnectButtons, Typography} from '@/components'
+import { ConnectButtons, Typography } from '@/components'
 
 import s from './price-bottom.module.scss'
 
@@ -10,7 +10,7 @@ export const PriceBottom = () => {
         Enjoy 10-20% discounts when buying from 3 months!
       </Typography>
       <div className={`${s.sectionButtons} section__buttons`}>
-        <ConnectButtons/>
+        <ConnectButtons />
       </div>
     </div>
   )
