@@ -9,7 +9,7 @@ export const Contacts = () => {
       <div className={`container container--large`}>
         <div className={`section__top ${s.top}`}>
           <Typography as={'h2'} isLine variant={TypographyVariant.title1}>
-            Feel free to contact with us!
+            Feel free to contact with&nbsp;us!
           </Typography>
         </div>
         <h2 className={'sr-only'}>Contacts</h2>

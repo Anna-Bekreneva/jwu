@@ -89,6 +89,16 @@
     position: absolute;
     right: 0;
     bottom: -12px;
-    stroke: var(--color-orange-400);
+
+    /* stylelint-disable-next-line */
+    @include mq(md) {
+      right: 50%;
+      transform: translateX(50%);
+      width: 320px;
+    }
+
+    @include mq(sm) {
+      width: 100%;
+    }
   }
 }
