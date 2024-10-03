@@ -1,6 +1,8 @@
-import { ConnectButtons, Logo, Menu, useHeader } from '@/components'
+import { ConnectButtons, Logo, Menu } from '@/components'
 
 import s from './header.module.scss'
+
+import { useHeader } from './hooks/useHeader'
 
 export const Header = () => {
   const { burgerButtonRef, isOpenMenu, menuWrapperRef, setIsOpenMenu } = useHeader()

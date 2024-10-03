@@ -1,7 +1,9 @@
 import { ButtonVariant } from '@/common'
-import { Social, dataSocials } from '@/components'
+import { Social } from '@/components'
 
 import s from './socials.module.scss'
+
+import { dataSocials } from './socials-data'
 
 type Props = {
   className?: string

@@ -28,17 +28,27 @@ export const TabsList = ({ className, ...props }: TabsListProps) => {
 type TabsTriggerPropsType = {
   value: string
 } & ComponentPropsWithoutRef<'button'>
-export const TabsTrigger = ({ value, ...props }: TabsTriggerPropsType) => {
+export const TabsTrigger = ({ children, value, ...props }: TabsTriggerPropsType) => {
   return (
-    <TabsRadix.Trigger asChild className={s.button} value={value}>
-      <Typography
-        as={'button'}
-        isLine
-        partLineFromText={1}
-        type={'button'}
-        variant={TypographyVariant.title2}
-        {...props}
-      />
+    <TabsRadix.Trigger asChild className={s.trigger} value={value}>
+      <Typography as={'button'} type={'button'} variant={TypographyVariant.title2} {...props}>
+        {children}
+        <svg
+          aria-hidden
+          fill={'none'}
+          height={'6'}
+          viewBox={'0 0 133 6'}
+          width={'133'}
+          xmlns={'http://www.w3.org/2000/svg'}
+        >
+          <path
+            d={'M1.51599 3.78912C14.8789 3.04577 84.2609 -0.258914 131.367 2.91914'}
+            stroke={'#FFA522'}
+            strokeLinecap={'round'}
+            strokeWidth={'3'}
+          />
+        </svg>
+      </Typography>
     </TabsRadix.Trigger>
   )
 }

@@ -1,3 +1,9 @@
+.box {
+  .errorMessage {
+    color: var(--color-red-600);
+  }
+}
+
 .label {
   margin-bottom: 4px;
   color: var(--color-purple-700);
@@ -24,6 +30,10 @@
     outline: 0;
   }
 
+  &:not(:last-child) {
+    margin-bottom: 4px;
+  }
+
   @media (any-hover: hover) {
     &:hover {
       &::placeholder {
@@ -31,6 +41,10 @@
       }
     }
   }
+}
+
+.error {
+  border-color: var(--color-red-600);
 }
 
 .textarea {

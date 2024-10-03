@@ -11,6 +11,9 @@ export const CONTACTS = {
   // instagram: {
   //   href: 'https://www.instagram.com/kindheartsfund?igsh=NnoxcjZ0dHV6N2d6',
   //   label: '@kindheartsfund',
+  instagram: {
+    href: 'https://www.instagram.com/jwumedia?igsh=YXN2dDhqNnkwZGZ3&utm_source=qr',
+  },
   // },
   phone: {
     href: 'tel:+17327886611',

@@ -30,7 +30,11 @@ type Props = {
 }
 
 export const Form = ({ className }: Props) => {
-  const { control, handleSubmit } = useForm<ContactsFormSchemaType>({
+  const {
+    control,
+    formState: { errors },
+    handleSubmit,
+  } = useForm<ContactsFormSchemaType>({
     defaultValues: { aim: 'business' },
     resolver: zodResolver(ContactsFormSchema),
   })
@@ -113,7 +117,9 @@ export const Form = ({ className }: Props) => {
           Privacy Policy
         </Typography>
       </Typography>
-      <Button type={'submit'}>Submit</Button>
+      <Button disabled={!!Object.keys(errors).length} type={'submit'}>
+        Submit
+      </Button>
     </form>
   )
 }

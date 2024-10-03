@@ -18,6 +18,7 @@ type Props<T> = {
   partLineFromText?: number
   variant?: keyof typeof TypographyVariant
 }
+
 const TypographyPolymorph = <T extends ElementType = 'p'>(
   props: Props<T> & Omit<ComponentPropsWithoutRef<T>, keyof Props<T>>,
   ref: ElementRef<T>

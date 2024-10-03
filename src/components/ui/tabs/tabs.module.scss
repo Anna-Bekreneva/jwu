@@ -15,28 +15,44 @@
   outline: 0;
 }
 
-.button {
+.trigger {
   @include link-focus;
-  text-transform: capitalize;
-  transition: color 0.3s, box-shadow 0.3s;
 
-  @media (any-hover: hover) {
-    &:hover {
-      color: var(--color-orange-400);
-    }
-  }
+  position: relative;
+  text-transform: capitalize;
+  transition:
+    color 0.3s,
+    box-shadow 0.3s;
 
   svg {
-    bottom: -20px;
-    opacity: 0;
-    transition: opacity 0.3s;
+    position: absolute;
+    bottom: -12px;
+    left: 0;
+
+    display: block;
+
+    width: 0;
+
+    transition: width 0.4s;
   }
 
   &[data-state='active'] {
     color: var(--color-orange-400);
 
     svg {
-      opacity: 1;
+      width: 100%;
+    }
+
+    @media (any-hover: hover) {
+      &:hover {
+        color: var(--color-orange-400);
+      }
+    }
+  }
+
+  @media (any-hover: hover) {
+    &:hover {
+      color: var(--color-purple-700);
     }
   }
 

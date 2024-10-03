@@ -31,7 +31,9 @@ export const Field = forwardRef<HTMLDivElement, TextFieldProps<ElementType>>((pr
         </Typography>
       )}
       <Tag
-        className={`${s.field} ${Tag === 'textarea' && s.textarea}`}
+        className={`${s.field} ${Tag === 'textarea' ? s.textarea : ''} ${
+          errorMessage ? s.error : ''
+        }`}
         id={id}
         onChange={changeHandler}
         {...rest}
