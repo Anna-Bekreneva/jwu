@@ -1,10 +1,16 @@
-import { StatisticCard, StatisticCardPropsType } from '@/components'
+import { StatisticCard } from '@/components'
 
 import s from './statistic-card.module.scss'
 
 import { DetailCard } from '../statistics-detail-card/statistics-detail-card'
 
-const cards: StatisticCardPropsType[] = [
+type StatisticCardProps = {
+  bgColor?: string
+  numbers: string
+  text: string
+}
+
+const cards: StatisticCardProps[] = [
   {
     numbers: '47.7%',
     text: 'of people find Mobile Billboards to be effective on\u00A0brand awareness',

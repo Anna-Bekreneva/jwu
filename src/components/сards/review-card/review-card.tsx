@@ -3,7 +3,7 @@ import { Picture, PicturePropsType, Typography } from '@/components'
 
 import s from './review-card.module.scss'
 
-export type ReviewCardPropsType = {
+type ReviewCardPropsType = {
   className?: string
   name: string
   position?: string

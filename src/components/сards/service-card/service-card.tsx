@@ -5,7 +5,7 @@ import { Typography } from '@/components'
 
 import s from './service-card.module.scss'
 
-export type Props = ServiceData & ComponentPropsWithoutRef<'article'>
+type Props = ServiceData & ComponentPropsWithoutRef<'article'>
 
 export const ServiceCard = ({ className, icon, iconBg = 'purple', text, title }: Props) => {
   const cardClassName = `${s.card} ${text && s.detail} ${className}`

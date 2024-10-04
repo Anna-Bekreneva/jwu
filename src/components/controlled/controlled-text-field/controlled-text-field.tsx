@@ -24,13 +24,6 @@ export const ControlledTextField = <T extends FieldValues, D extends ElementType
   })
 
   return (
-    <Field
-      {...field}
-      {...rest}
-      as={as}
-      errorMessage={error?.message}
-      id={name}
-      onValueChange={onChange}
-    />
+    <Field {...field} {...rest} as={as} errorMessage={error?.message} onValueChange={onChange} />
   )
 }

@@ -1,10 +1,13 @@
 import { useEffect } from 'react'
 
 import { TypographyVariant } from '@/common'
-import { GallerySwiper, GalleryType, PriceItem, PriceType, Typography } from '@/components'
+import { Typography } from '@/components'
 import { Fancybox as NativeFancybox } from '@fancyapps/ui'
 
 import s from './tariff-card.module.scss'
+
+import { GallerySwiper, GalleryType } from './gallery-swiper/gallery-swiper'
+import { PriceItem, PriceType } from './price-item/price-item'
 
 export type TariffType = {
   additionalText?: string

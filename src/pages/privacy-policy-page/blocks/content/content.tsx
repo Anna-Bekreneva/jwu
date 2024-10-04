@@ -160,10 +160,10 @@ export const PrivacyPolicyContent = () => {
           </Typography>
           <Typography>Usage Data is collected automatically when using the Service.</Typography>
           <Typography>
-            Usage Data may include information such as Your Device's Internet Protocol address (e.g.
-            IP address), browser type, browser version, the pages of our Service that You visit, the
-            time and date of Your visit, the time spent on those pages, unique device identifiers
-            and other diagnostic data.
+            Usage Data may include information such as Your Device&apos;s Internet Protocol address
+            (e.g. IP address), browser type, browser version, the pages of our Service that You
+            visit, the time and date of Your visit, the time spent on those pages, unique device
+            identifiers and other diagnostic data.
           </Typography>
           <Typography>
             When You access the Service by or through a mobile device, We may collect certain
@@ -298,7 +298,7 @@ export const PrivacyPolicyContent = () => {
               <Typography>
                 <Typography as={'strong'}>To contact You:</Typography> To contact You by email,
                 telephone calls, SMS, or other equivalent forms of electronic communication, such as
-                a mobile application's push notifications regarding updates or informative
+                a mobile application&apos;s push notifications regarding updates or informative
                 communications related to the functionalities, products or contracted services,
                 including the security updates, when necessary or reasonable for their
                 implementation.
@@ -400,7 +400,7 @@ export const PrivacyPolicyContent = () => {
             Transfer of Your Personal Data
           </Typography>
           <Typography>
-            Your information, including Personal Data, is processed at the Company's operating
+            Your information, including Personal Data, is processed at the Company&apos;s operating
             offices and in any other places where the parties involved in the processing are
             located. It means that this information may be transferred to — and maintained on —
             computers located outside of Your state, province, country or other governmental
@@ -500,7 +500,7 @@ export const PrivacyPolicyContent = () => {
 
       <div className={s.block} id={'childrens'}>
         <Typography as={'h2'} variant={TypographyVariant.title2}>
-          Children's Privacy
+          Children&apos;s Privacy
         </Typography>
         <Typography>
           Our Service does not address anyone under the age of 13. We do not knowingly collect
@@ -512,8 +512,8 @@ export const PrivacyPolicyContent = () => {
         </Typography>
         <Typography>
           If We need to rely on consent as a legal basis for processing Your information and Your
-          country requires consent from a parent, We may require Your parent's consent before We
-          collect and use that information.
+          country requires consent from a parent, We may require Your parent&apos;s consent before
+          We collect and use that information.
         </Typography>
       </div>
 
@@ -523,8 +523,8 @@ export const PrivacyPolicyContent = () => {
         </Typography>
         <Typography>
           Our Service may contain links to other websites that are not operated by Us. If You click
-          on a third party link, You will be directed to that third party's site. We strongly advise
-          You to review the Privacy Policy of every site You visit.
+          on a third party link, You will be directed to that third party&apos;s site. We strongly
+          advise You to review the Privacy Policy of every site You visit.
         </Typography>
         <Typography>
           We have no control over and assume no responsibility for the content, privacy policies or

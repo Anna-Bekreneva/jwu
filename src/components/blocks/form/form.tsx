@@ -1,5 +1,3 @@
-import { useForm } from 'react-hook-form'
-
 import { TypographyVariant } from '@/common'
 import {
   Button,
@@ -9,42 +7,20 @@ import {
   Typography,
 } from '@/components'
 import { APP_ROUTES } from '@/utils'
-import { zodResolver } from '@hookform/resolvers/zod'
-import { z } from 'zod'
 
 import s from './form.module.scss'
 
-const ContactsFormSchema = z.object({
-  aim: z.string(),
-  email: z.string().email('Please enter a valid email'),
-  kindBusiness: z.string(),
-  message: z.string().optional(),
-  name: z.string().min(3),
-  phone: z.string().regex(/^\+?[1-9]\d{1,14}$/, 'Please enter a valid phone number'),
-})
-
-type ContactsFormSchemaType = z.infer<typeof ContactsFormSchema>
+import { useHookForm } from './hooks/useForm/useForm'
 
 type Props = {
   className?: string
 }
 
 export const Form = ({ className }: Props) => {
-  const {
-    control,
-    formState: { errors },
-    handleSubmit,
-  } = useForm<ContactsFormSchemaType>({
-    defaultValues: { aim: 'business' },
-    resolver: zodResolver(ContactsFormSchema),
-  })
-
-  const submitHandler = (data: ContactsFormSchemaType) => {
-    console.log(data)
-  }
+  const { control, errors, formRef, submitFormHandler } = useHookForm()
 
   return (
-    <form className={`${className} ${s.form} card`} onSubmit={handleSubmit(submitHandler)}>
+    <form className={`${className} ${s.form} card`} onSubmit={submitFormHandler} ref={formRef}>
       <Typography as={'h3'} variant={TypographyVariant.title2}>
         Fill out the form and we will contact you shortly
       </Typography>
@@ -93,6 +69,7 @@ export const Form = ({ className }: Props) => {
           </div>
           <ControlledTextField
             control={control}
+            id={'contacts-kind-of-business'}
             label={'What kind of business do you have?'}
             name={'kindBusiness'}
             placeholder={'Restaurant'}

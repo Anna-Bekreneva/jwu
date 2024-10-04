@@ -46,7 +46,9 @@
   @include link-focus;
   color: var(--color-magenta-500);
   text-decoration: underline;
-  transition: color 0.3s, box-shadow 0.3s;
+  transition:
+    color 0.3s,
+    box-shadow 0.3s;
 
   @media (any-hover: hover) {
     &:hover {

@@ -55,15 +55,15 @@ export const questions: QuestionType[] = [
     title: 'Can I use sound in my advertisement?',
   },
   {
-    content: <p>Don't worry! We will be happy to help you create any promotional materials</p>,
+    content: <p>Don&apos;t worry! We will be happy to help you create any promotional materials</p>,
     id: '6',
     title: "What if I don't have a\u00A0video to promote yet?",
   },
   {
     content: (
       <p>
-        Yes, you can. We offer an "Exclusive Event" plan for such occasions. Please note that the
-        event rental is&nbsp;available for a minimum of 2 hours
+        Yes, you can. We offer an &quot;Exclusive Event&quot; plan for such occasions. Please note
+        that the event rental is&nbsp;available for a minimum of 2 hours
       </p>
     ),
     id: '7',
